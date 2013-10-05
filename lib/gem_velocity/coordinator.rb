@@ -13,6 +13,7 @@ class Coordinator
   end
 
   def date_range=(args)
+    return nil if args.nil?
     unless args.is_a?(Array) && args.size == 2
       raise(ArgumentError, "must pass a range like [start,end]")
     end
@@ -54,6 +55,12 @@ class Coordinator
     }
     builder = GruffBuilder.new(@root || Dir.pwd,nil,version,gem_name,opts)
     builder
+  end
+
+  def graph(root_arg, range)
+    self.date_range = range
+    self.root = root_arg
+    gruff_builder.write
   end
 
   private

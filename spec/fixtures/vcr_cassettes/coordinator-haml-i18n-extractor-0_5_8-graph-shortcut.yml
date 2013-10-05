@@ -28,7 +28,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 00:37:48 GMT
+      - Sat, 05 Oct 2013 00:37:53 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -51,11 +51,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 00:37:48 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 00:37:53 GMT; secure
       X-Request-Id:
-      - 3f474e38b44fa84e5a8c3f7917b112c6
+      - 587fc6985e8dfe97de34b9f5180506bb
       X-Runtime:
-      - '0.118741'
+      - '0.120865'
       X-Rack-Cache:
       - miss
     body:
@@ -273,7 +273,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 00:37:50 GMT
+      - Sat, 05 Oct 2013 00:37:54 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -296,11 +296,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 00:37:50 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 00:37:54 GMT; secure
       X-Request-Id:
-      - bba951822037b21689b5c4d53579d475
+      - f8d54e4f312bf8e58e2540d973156fae
       X-Runtime:
-      - '0.129461'
+      - '0.139657'
       X-Rack-Cache:
       - miss
     body:
@@ -518,7 +518,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 00:37:51 GMT
+      - Sat, 05 Oct 2013 00:37:56 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -541,11 +541,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 00:37:51 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 00:37:56 GMT; secure
       X-Request-Id:
-      - 1c91ce3f8816ef85a35bcaae4a3cc8f3
+      - 7d0f340ffe793879652c3924320ce2d5
       X-Runtime:
-      - '0.143664'
+      - '0.234055'
       X-Rack-Cache:
       - miss
     body:

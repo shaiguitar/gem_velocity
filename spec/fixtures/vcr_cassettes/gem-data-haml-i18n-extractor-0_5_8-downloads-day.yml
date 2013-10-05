@@ -28,7 +28,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 04 Oct 2013 23:38:41 GMT
+      - Sat, 05 Oct 2013 00:38:05 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -49,20 +49,18 @@ http_interactions:
       - IE=Edge,chrome=1
       - IE=Edge,chrome=1
       Etag:
-      - ! '"76eb3732d2d035c9b1044c042cfef24b"'
+      - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sat, 04-Oct-2014 23:38:41 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 00:38:05 GMT; secure
       X-Request-Id:
-      - 07be4603260168ba07c1c255723daa9f
+      - 049ff78c9b3530fe3132746da696a26f
       X-Runtime:
-      - '0.147687'
+      - '0.147286'
       X-Rack-Cache:
       - miss
     body:
       encoding: US-ASCII
       string: ! '--- !omap
-
-        - ''2013-07-07'': 0
 
         - ''2013-07-08'': 0
 
@@ -242,7 +240,9 @@ http_interactions:
 
         - ''2013-10-04'': 3
 
+        - ''2013-10-05'': 0
+
 '
     http_version: 
-  recorded_at: Thu, 15 Aug 2013 17:00:01 GMT
+  recorded_at: Thu, 15 Aug 2013 17:00:00 GMT
 recorded_with: VCR 2.6.0

@@ -28,7 +28,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 04 Oct 2013 23:38:41 GMT
+      - Sat, 05 Oct 2013 00:38:00 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -53,11 +53,11 @@ http_interactions:
       - IE=Edge,chrome=1
       - IE=Edge,chrome=1
       Set-Cookie:
-      - remember_token=; path=/; expires=Sat, 04-Oct-2014 23:38:41 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 00:38:00 GMT; secure
       X-Request-Id:
-      - 9341543c812a2a8e217cba33b103bacb
+      - 534fac0a8a721d7a870a9e768183f978
       X-Runtime:
-      - '0.083703'
+      - '0.096333'
       X-Rack-Cache:
       - miss
     body:
@@ -194,5 +194,5 @@ http_interactions:
         the haml files into localization files\n  platform: ruby\n  prerelease: false\n
         \ licenses: []\n  requirements: \n"
     http_version: 
-  recorded_at: Thu, 15 Aug 2013 17:00:01 GMT
+  recorded_at: Thu, 15 Aug 2013 17:00:00 GMT
 recorded_with: VCR 2.6.0

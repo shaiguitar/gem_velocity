@@ -1,4 +1,4 @@
-class Coordinator
+class Velocitator
 
   include ::Helpers
 

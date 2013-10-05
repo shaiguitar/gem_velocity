@@ -9,7 +9,7 @@ So, not a number of downloads each day, but rather just the general timeline of 
 Should be able to do something like (api unstable, but the idea holds):
 
 <pre>
-velocitator = Coordinator.new("rails", "4.0.0")
+velocitator = Velocitator.new("rails", "4.0.0")
 
 # with a time period
 file = velocitator.graph("/tmp/store", [1.day.ago, Time.now])

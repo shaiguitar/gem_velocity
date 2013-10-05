@@ -20,7 +20,7 @@ class GruffBuilder
     @relative_path = relative_path || "public/images/"
     @version = version
     @gem_name = gem_name
-
+    #puts gruff_options.inspect
     @title = gruff_options[:title] || ""
     @labels = gruff_options[:labels] || {}
     @line_data = gruff_options[:line_data]

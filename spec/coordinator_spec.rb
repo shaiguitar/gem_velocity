@@ -3,7 +3,8 @@ require 'spec_helper'
 describe Coordinator do
 
   before do
-    Timecop.travel(Time.local(2013, 8, 15, 10, 0, 0))
+    Timecop.travel(Time.local(2013, 9, 20, 10, 0, 0))
+    # the 10: flattens out to 00: but we don't care at this point as it's day by day.
     Timecop.freeze
   end
 
@@ -12,19 +13,20 @@ describe Coordinator do
   end
 
   it "sets a specific date range according to the gem's info" do
-    VCR.use_cassette('coordinator-haml-i18n-extractor-0.5.8-versions') do
+    VCR.use_cassette('coordinator-haml-i18n-extractor-0.5.8-versions-info') do
       velocitator = Coordinator.new("haml-i18n-extractor", "0.5.8")
       # 1.year.ago is truncated down, because the first download was at...also, end time is :now.
-      velocitator.effective_date_range.should eq ["2013-09-15T00:00:00Z", "2013-08-15T10:00:00Z"]
+      velocitator.effective_date_range.should eq ["2013-09-15T00:00:00Z", "2013-09-20T00:00:00Z"]
     end
   end
 
   it "can override the default time ranges if its in the range" do
-    VCR.use_cassette('coordinator-haml-i18n-extractor-0.5.8-versions') do
+    VCR.use_cassette('coordinator-haml-i18n-extractor-0.5.8-versions-override') do
       velocitator = Coordinator.new("haml-i18n-extractor", "0.5.8")
       # 1.year.ago is truncated down, because the first download was at...also, end time is :now.
       velocitator.date_range = [1.day.ago, Time.now]
-      velocitator.effective_date_range.should eq ["2013-08-14T10:00:00Z", "2013-08-15T10:00:00Z"]
+      velocitator.effective_date_range.should eq ["2013-09-19T00:00:00Z", "2013-09-20T00:00:00Z"]
+      velocitator.line_data.size.should eq (velocitator.specific_days_in_range.size)
     end
   end
 
@@ -46,9 +48,9 @@ describe Coordinator do
       builder = velocitator.gruff_builder
 
       # fixture / webmock / data etc.. if it fails, rm -rf spec/fixtures/vcr_cassettes
-      builder.line_data.should == [32, 36, 37, 40, 42, 44, 45, 45, 47, 53, 63, 66, 68, 69, 74, 74, 74, 74, 77, 77]
+      builder.line_data.should == [40, 42]
       builder.title.should == "haml-i18n-extractor-0.5.8"
-      builder.labels.should == ({1=>"2013-08-14T10:00:00Z", (builder.line_data.size-2) =>"2013-08-15T10:00:00Z"})
+      builder.labels.should == ({1=>"2013-09-19", (builder.line_data.size-2) =>"2013-09-20"})
       builder.max_value.should == 77
       builder.min_value.should == 0
 

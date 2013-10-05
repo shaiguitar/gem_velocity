@@ -21,22 +21,26 @@ class Coordinator
   end
 
   def line_data
-    gem_data.downloads_day(version).map {|day,total| total}.compact
+    gem_data.downloads_day(version).map {|day,total|
+      total if specific_days_in_range.include?(Date.parse(day))
+    }.compact
   end
 
   def effective_date_range
+    # we allow overwriting by passing a date range.
+    return @range if @range
     if date_range
       if start_time && end_time
-        range = start_time, end_time
+        @range = start_time, end_time
       elsif start_time && !end_time
-        range = start_time, default_end
+        @range = start_time, default_end
       elsif !start_time && end_time
-        range = default_start, end_time
+        @range = default_start, end_time
       end
     else
-      range = default_date_range
+      @range = default_date_range
     end
-    range
+    @range
   end
 
   # call, after you set all the attributes you want.
@@ -48,7 +52,7 @@ class Coordinator
     opts = {
       :title => "#{gem_name}-#{version}",
       # just the first and last dates. give a small offset so it fits into the pciture.
-      :labels => ({1 => effective_start_time, (line_data.size-2) => effective_end_time }),
+      :labels => ({1 => time_format_str_small(effective_start_time), (line_data.size-2) => time_format_str_small(effective_end_time) }),
       :max_value => max_value || default_max_value,
       :min_value => min_value || default_min_value,
       :line_data => line_data
@@ -63,6 +67,18 @@ class Coordinator
     gruff_builder.write
   end
 
+  def specific_days_in_range
+    all_days = []
+    s = Date.parse(effective_start_time)
+    e = Date.parse(effective_end_time)
+    i = s
+    while (i <= e )
+      all_days << i
+      i += 1.day
+    end
+    all_days
+  end
+
   private
 
   def start_time
@@ -74,20 +90,20 @@ class Coordinator
   end
 
   def effective_start_time
-    effective_date_range.first
+    # the most recent day found
+    [ effective_date_range.first, gem_data.downloads_day(version).first.first ].sort.last
   end
 
   def effective_end_time
     effective_date_range.last
   end
 
-
   def default_date_range
     range = default_start, default_end
   end
 
   def default_start
-    default_start = time_built
+    default_start = time_format_str(time_built)
   end
   
   def default_end

@@ -16,8 +16,8 @@ class GruffBuilder
   attr_accessor :title, :labels, :line_data, :min_value, :max_value
 
   def initialize(root, relative_path, version, gem_name, gruff_options = {})
-    @root = root || raise("you must set a root. default is root/images")
-    @relative_path = relative_path || "images/"
+    @root = root || raise("you must set a root. default is root/public/images")
+    @relative_path = relative_path || "public/images/"
     @version = version
     @gem_name = gem_name
 

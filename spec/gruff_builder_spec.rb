@@ -25,7 +25,7 @@ describe GruffBuilder do
 
   it "has a filename" do
     builder = GruffBuilder.new(@tmp_dir,nil,"0.5.8","foo-baz", {})
-    builder.relative_filename.should eq "images/foo-baz-0.5.8.png"
+    builder.relative_filename.should eq "public/images/foo-baz-0.5.8.png"
   end
 
   it "can not write a file if there is no line data" do

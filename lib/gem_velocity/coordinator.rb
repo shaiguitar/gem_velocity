@@ -61,7 +61,8 @@ class Coordinator
     builder
   end
 
-  def graph(root_arg, range)
+  def graph(root_arg = nil, range = nil)
+    # if nil, defaults will be used
     self.date_range = range
     self.root = root_arg
     gruff_builder.write

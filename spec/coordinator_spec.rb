@@ -68,7 +68,7 @@ describe Coordinator do
       file = velocitator.graph(SpecHelper.tmpdir,[1.day.ago, Time.now])
       # you should be able to pass a nil root which will default to public/images
       # you should be able to pass a nil range will default to default_range
-      file = velocitator.graph(nil,nil)
+      file = velocitator.graph
       File.exist?(file).should be_true
     end
   end

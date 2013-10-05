@@ -14,7 +14,7 @@ velocitator = Coordinator.new("rails", "4.0.0")
 # with a time period
 file = velocitator.graph("/tmp/store", [1.day.ago, Time.now])
 # use the defaults
-file = velocitator.graph(nil,nil)
+file = velocitator.graph
 
 </pre>
 

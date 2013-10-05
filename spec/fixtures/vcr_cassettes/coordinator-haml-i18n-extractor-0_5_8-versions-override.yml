@@ -28,7 +28,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:14 GMT
+      - Sat, 05 Oct 2013 15:28:14 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -51,11 +51,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:14 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:14 GMT; secure
       X-Request-Id:
-      - 5491987256479133ba01f5b23c9b0727
+      - 390e82785cb329942ae292ea77ac1f87
       X-Runtime:
-      - '0.160893'
+      - '0.258432'
       X-Rack-Cache:
       - miss
     body:
@@ -273,7 +273,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:14 GMT
+      - Sat, 05 Oct 2013 15:28:15 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -296,11 +296,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:14 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:15 GMT; secure
       X-Request-Id:
-      - 454803500f7c9ba9f4f1b226e04cc7ec
+      - 80e359c65057a49094d1d979564d0c57
       X-Runtime:
-      - '0.138589'
+      - '0.145348'
       X-Rack-Cache:
       - miss
     body:
@@ -518,7 +518,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:14 GMT
+      - Sat, 05 Oct 2013 15:28:15 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -541,11 +541,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:14 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:15 GMT; secure
       X-Request-Id:
-      - ad09c4d11ba92f6ade088ea2180a2c69
+      - 9d5cc565a289bc060321354cb6c61b37
       X-Runtime:
-      - '0.290724'
+      - '0.151020'
       X-Rack-Cache:
       - miss
     body:
@@ -763,7 +763,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:15 GMT
+      - Sat, 05 Oct 2013 15:28:15 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -786,11 +786,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:15 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:15 GMT; secure
       X-Request-Id:
-      - d8acd624c3434a43a302c9312c4dfb42
+      - c0e36163a2293eaf1a99a8ef8261f7c4
       X-Runtime:
-      - '0.246159'
+      - '0.247117'
       X-Rack-Cache:
       - miss
     body:
@@ -1008,7 +1008,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:15 GMT
+      - Sat, 05 Oct 2013 15:28:16 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -1031,11 +1031,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:15 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:16 GMT; secure
       X-Request-Id:
-      - f062beeab698380475545f62c30af9ee
+      - d2263b1230e2e4609989f601e1825331
       X-Runtime:
-      - '0.251968'
+      - '0.144055'
       X-Rack-Cache:
       - miss
     body:
@@ -1253,7 +1253,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:15 GMT
+      - Sat, 05 Oct 2013 15:28:16 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -1276,11 +1276,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:15 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:16 GMT; secure
       X-Request-Id:
-      - 8d09d5ed87fa3e28dc89f97df879b04b
+      - 5e0849cc52f48fdcee4747ae1204182b
       X-Runtime:
-      - '0.126665'
+      - '0.194839'
       X-Rack-Cache:
       - miss
     body:
@@ -1498,7 +1498,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:16 GMT
+      - Sat, 05 Oct 2013 15:28:16 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -1521,11 +1521,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:16 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:16 GMT; secure
       X-Request-Id:
-      - b8a928ba760ab757b8fb4fd51cd420e5
+      - a4082473ef6969367112252e15d16f23
       X-Runtime:
-      - '0.203506'
+      - '0.141994'
       X-Rack-Cache:
       - miss
     body:
@@ -1743,7 +1743,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:16 GMT
+      - Sat, 05 Oct 2013 15:28:16 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -1766,11 +1766,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:16 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:16 GMT; secure
       X-Request-Id:
-      - e771670ccd0d6a23bf0b42cb5fb5d778
+      - bfa54ca9799bf64224708b0e44afb442
       X-Runtime:
-      - '0.242560'
+      - '0.121595'
       X-Rack-Cache:
       - miss
     body:
@@ -1988,7 +1988,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:16 GMT
+      - Sat, 05 Oct 2013 15:28:17 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -2011,11 +2011,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:16 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:17 GMT; secure
       X-Request-Id:
-      - bb24f99fffdf25c381f4bcf3f05d226e
+      - 7484411d077c870f9232ce0848f82039
       X-Runtime:
-      - '0.137586'
+      - '0.118708'
       X-Rack-Cache:
       - miss
     body:
@@ -2233,7 +2233,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:17 GMT
+      - Sat, 05 Oct 2013 15:28:17 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -2256,11 +2256,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:17 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:17 GMT; secure
       X-Request-Id:
-      - 1fa942652e394f7354874632ff6536a5
+      - e249264c71e235654d86313a5b30464c
       X-Runtime:
-      - '0.200363'
+      - '0.143176'
       X-Rack-Cache:
       - miss
     body:
@@ -2478,7 +2478,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:17 GMT
+      - Sat, 05 Oct 2013 15:28:17 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -2501,11 +2501,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:17 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:17 GMT; secure
       X-Request-Id:
-      - b496e3cb62931c44f8cd809df1d2a00b
+      - e919027044a80629bbc161eccb116a47
       X-Runtime:
-      - '0.203713'
+      - '0.189288'
       X-Rack-Cache:
       - miss
     body:
@@ -2723,7 +2723,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:17 GMT
+      - Sat, 05 Oct 2013 15:28:17 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -2746,11 +2746,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:17 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:17 GMT; secure
       X-Request-Id:
-      - 4a5a62b000a907cd6dfbec7e5798d000
+      - cb4f09872c9ae9b1f74884be5f5e38ca
       X-Runtime:
-      - '0.248672'
+      - '0.128720'
       X-Rack-Cache:
       - miss
     body:
@@ -2968,7 +2968,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:18 GMT
+      - Sat, 05 Oct 2013 15:28:18 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -2991,11 +2991,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:18 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:18 GMT; secure
       X-Request-Id:
-      - c9ec26fe9c442f5a024928694a4ddfb7
+      - 49a1600f224f375bdd3ad36bd6dab4a6
       X-Runtime:
-      - '0.233617'
+      - '0.118998'
       X-Rack-Cache:
       - miss
     body:
@@ -3213,7 +3213,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:18 GMT
+      - Sat, 05 Oct 2013 15:28:18 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -3236,11 +3236,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:18 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:18 GMT; secure
       X-Request-Id:
-      - 083add4f26cd3b3cee53e2e272a892cb
+      - adb20fa2eb70eeab022c6dd21afa7082
       X-Runtime:
-      - '0.244526'
+      - '0.121405'
       X-Rack-Cache:
       - miss
     body:
@@ -3458,7 +3458,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:18 GMT
+      - Sat, 05 Oct 2013 15:28:18 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -3481,11 +3481,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:18 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:18 GMT; secure
       X-Request-Id:
-      - 5102f1bf46b923f89bd98a36a463ee04
+      - 1ded363cfd8a79c88881bf72b72916c9
       X-Runtime:
-      - '0.125327'
+      - '0.194808'
       X-Rack-Cache:
       - miss
     body:
@@ -3703,7 +3703,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:19 GMT
+      - Sat, 05 Oct 2013 15:28:19 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -3726,11 +3726,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:19 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:19 GMT; secure
       X-Request-Id:
-      - a1d00055567c8ae6e21bd06b943f7273
+      - c719fbd4b70927b22f875436f40c7729
       X-Runtime:
-      - '0.126176'
+      - '0.214131'
       X-Rack-Cache:
       - miss
     body:
@@ -3948,7 +3948,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:19 GMT
+      - Sat, 05 Oct 2013 15:28:19 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -3971,9 +3971,744 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:19 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:19 GMT; secure
       X-Request-Id:
-      - 9d255a0b41be6d8ae23969797f21088c
+      - 91e35457519f485f5e8af193fbee270a
+      X-Runtime:
+      - '0.257215'
+      X-Rack-Cache:
+      - miss
+    body:
+      encoding: US-ASCII
+      string: ! '--- !omap
+
+        - ''2013-07-08'': 0
+
+        - ''2013-07-09'': 0
+
+        - ''2013-07-10'': 0
+
+        - ''2013-07-11'': 0
+
+        - ''2013-07-12'': 0
+
+        - ''2013-07-13'': 0
+
+        - ''2013-07-14'': 0
+
+        - ''2013-07-15'': 0
+
+        - ''2013-07-16'': 0
+
+        - ''2013-07-17'': 0
+
+        - ''2013-07-18'': 0
+
+        - ''2013-07-19'': 0
+
+        - ''2013-07-20'': 0
+
+        - ''2013-07-21'': 0
+
+        - ''2013-07-22'': 0
+
+        - ''2013-07-23'': 0
+
+        - ''2013-07-24'': 0
+
+        - ''2013-07-25'': 0
+
+        - ''2013-07-26'': 0
+
+        - ''2013-07-27'': 0
+
+        - ''2013-07-28'': 0
+
+        - ''2013-07-29'': 0
+
+        - ''2013-07-30'': 0
+
+        - ''2013-07-31'': 0
+
+        - ''2013-08-01'': 0
+
+        - ''2013-08-02'': 0
+
+        - ''2013-08-03'': 0
+
+        - ''2013-08-04'': 0
+
+        - ''2013-08-05'': 0
+
+        - ''2013-08-06'': 0
+
+        - ''2013-08-07'': 0
+
+        - ''2013-08-08'': 0
+
+        - ''2013-08-09'': 0
+
+        - ''2013-08-10'': 0
+
+        - ''2013-08-11'': 0
+
+        - ''2013-08-12'': 0
+
+        - ''2013-08-13'': 0
+
+        - ''2013-08-14'': 0
+
+        - ''2013-08-15'': 0
+
+        - ''2013-08-16'': 0
+
+        - ''2013-08-17'': 0
+
+        - ''2013-08-18'': 0
+
+        - ''2013-08-19'': 0
+
+        - ''2013-08-20'': 0
+
+        - ''2013-08-21'': 0
+
+        - ''2013-08-22'': 0
+
+        - ''2013-08-23'': 0
+
+        - ''2013-08-24'': 0
+
+        - ''2013-08-25'': 0
+
+        - ''2013-08-26'': 0
+
+        - ''2013-08-27'': 0
+
+        - ''2013-08-28'': 0
+
+        - ''2013-08-29'': 0
+
+        - ''2013-08-30'': 0
+
+        - ''2013-08-31'': 0
+
+        - ''2013-09-01'': 0
+
+        - ''2013-09-02'': 0
+
+        - ''2013-09-03'': 0
+
+        - ''2013-09-04'': 0
+
+        - ''2013-09-05'': 0
+
+        - ''2013-09-06'': 0
+
+        - ''2013-09-07'': 0
+
+        - ''2013-09-08'': 0
+
+        - ''2013-09-09'': 0
+
+        - ''2013-09-10'': 0
+
+        - ''2013-09-11'': 0
+
+        - ''2013-09-12'': 0
+
+        - ''2013-09-13'': 0
+
+        - ''2013-09-14'': 0
+
+        - ''2013-09-15'': 16
+
+        - ''2013-09-16'': 32
+
+        - ''2013-09-17'': 4
+
+        - ''2013-09-18'': 1
+
+        - ''2013-09-19'': 3
+
+        - ''2013-09-20'': 2
+
+        - ''2013-09-21'': 2
+
+        - ''2013-09-22'': 1
+
+        - ''2013-09-23'': 0
+
+        - ''2013-09-24'': 2
+
+        - ''2013-09-25'': 6
+
+        - ''2013-09-26'': 10
+
+        - ''2013-09-27'': 3
+
+        - ''2013-09-28'': 2
+
+        - ''2013-09-29'': 1
+
+        - ''2013-09-30'': 5
+
+        - ''2013-10-01'': 0
+
+        - ''2013-10-02'': 0
+
+        - ''2013-10-03'': 0
+
+        - ''2013-10-04'': 3
+
+        - ''2013-10-05'': 0
+
+'
+    http_version: 
+  recorded_at: Fri, 20 Sep 2013 17:00:00 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/versions/haml-i18n-extractor-0.5.8/downloads.yaml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Gems 0.8.3
+      - Ruby
+      Authorization:
+      - 80fed427c6410ff1b8579fff493435dc
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 05 Oct 2013 15:28:19 GMT
+      Content-Type:
+      - text/yaml
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Content-Disposition:
+      - attachment
+      Content-Transfer-Encoding:
+      - binary
+      Cache-Control:
+      - private
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"fdaaf886330ae584b160e46e61808763"'
+      Set-Cookie:
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:19 GMT; secure
+      X-Request-Id:
+      - efb0dae55cb1ec01345addb8ec7ae01c
+      X-Runtime:
+      - '0.124743'
+      X-Rack-Cache:
+      - miss
+    body:
+      encoding: US-ASCII
+      string: ! '--- !omap
+
+        - ''2013-07-08'': 0
+
+        - ''2013-07-09'': 0
+
+        - ''2013-07-10'': 0
+
+        - ''2013-07-11'': 0
+
+        - ''2013-07-12'': 0
+
+        - ''2013-07-13'': 0
+
+        - ''2013-07-14'': 0
+
+        - ''2013-07-15'': 0
+
+        - ''2013-07-16'': 0
+
+        - ''2013-07-17'': 0
+
+        - ''2013-07-18'': 0
+
+        - ''2013-07-19'': 0
+
+        - ''2013-07-20'': 0
+
+        - ''2013-07-21'': 0
+
+        - ''2013-07-22'': 0
+
+        - ''2013-07-23'': 0
+
+        - ''2013-07-24'': 0
+
+        - ''2013-07-25'': 0
+
+        - ''2013-07-26'': 0
+
+        - ''2013-07-27'': 0
+
+        - ''2013-07-28'': 0
+
+        - ''2013-07-29'': 0
+
+        - ''2013-07-30'': 0
+
+        - ''2013-07-31'': 0
+
+        - ''2013-08-01'': 0
+
+        - ''2013-08-02'': 0
+
+        - ''2013-08-03'': 0
+
+        - ''2013-08-04'': 0
+
+        - ''2013-08-05'': 0
+
+        - ''2013-08-06'': 0
+
+        - ''2013-08-07'': 0
+
+        - ''2013-08-08'': 0
+
+        - ''2013-08-09'': 0
+
+        - ''2013-08-10'': 0
+
+        - ''2013-08-11'': 0
+
+        - ''2013-08-12'': 0
+
+        - ''2013-08-13'': 0
+
+        - ''2013-08-14'': 0
+
+        - ''2013-08-15'': 0
+
+        - ''2013-08-16'': 0
+
+        - ''2013-08-17'': 0
+
+        - ''2013-08-18'': 0
+
+        - ''2013-08-19'': 0
+
+        - ''2013-08-20'': 0
+
+        - ''2013-08-21'': 0
+
+        - ''2013-08-22'': 0
+
+        - ''2013-08-23'': 0
+
+        - ''2013-08-24'': 0
+
+        - ''2013-08-25'': 0
+
+        - ''2013-08-26'': 0
+
+        - ''2013-08-27'': 0
+
+        - ''2013-08-28'': 0
+
+        - ''2013-08-29'': 0
+
+        - ''2013-08-30'': 0
+
+        - ''2013-08-31'': 0
+
+        - ''2013-09-01'': 0
+
+        - ''2013-09-02'': 0
+
+        - ''2013-09-03'': 0
+
+        - ''2013-09-04'': 0
+
+        - ''2013-09-05'': 0
+
+        - ''2013-09-06'': 0
+
+        - ''2013-09-07'': 0
+
+        - ''2013-09-08'': 0
+
+        - ''2013-09-09'': 0
+
+        - ''2013-09-10'': 0
+
+        - ''2013-09-11'': 0
+
+        - ''2013-09-12'': 0
+
+        - ''2013-09-13'': 0
+
+        - ''2013-09-14'': 0
+
+        - ''2013-09-15'': 16
+
+        - ''2013-09-16'': 32
+
+        - ''2013-09-17'': 4
+
+        - ''2013-09-18'': 1
+
+        - ''2013-09-19'': 3
+
+        - ''2013-09-20'': 2
+
+        - ''2013-09-21'': 2
+
+        - ''2013-09-22'': 1
+
+        - ''2013-09-23'': 0
+
+        - ''2013-09-24'': 2
+
+        - ''2013-09-25'': 6
+
+        - ''2013-09-26'': 10
+
+        - ''2013-09-27'': 3
+
+        - ''2013-09-28'': 2
+
+        - ''2013-09-29'': 1
+
+        - ''2013-09-30'': 5
+
+        - ''2013-10-01'': 0
+
+        - ''2013-10-02'': 0
+
+        - ''2013-10-03'': 0
+
+        - ''2013-10-04'': 3
+
+        - ''2013-10-05'': 0
+
+'
+    http_version: 
+  recorded_at: Fri, 20 Sep 2013 17:00:00 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/versions/haml-i18n-extractor-0.5.8/downloads.yaml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Gems 0.8.3
+      - Ruby
+      Authorization:
+      - 80fed427c6410ff1b8579fff493435dc
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 05 Oct 2013 15:28:20 GMT
+      Content-Type:
+      - text/yaml
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Content-Disposition:
+      - attachment
+      Content-Transfer-Encoding:
+      - binary
+      Cache-Control:
+      - private
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"fdaaf886330ae584b160e46e61808763"'
+      Set-Cookie:
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:20 GMT; secure
+      X-Request-Id:
+      - 6c3b18cf056092651d9ef7e0de11409d
+      X-Runtime:
+      - '0.122424'
+      X-Rack-Cache:
+      - miss
+    body:
+      encoding: US-ASCII
+      string: ! '--- !omap
+
+        - ''2013-07-08'': 0
+
+        - ''2013-07-09'': 0
+
+        - ''2013-07-10'': 0
+
+        - ''2013-07-11'': 0
+
+        - ''2013-07-12'': 0
+
+        - ''2013-07-13'': 0
+
+        - ''2013-07-14'': 0
+
+        - ''2013-07-15'': 0
+
+        - ''2013-07-16'': 0
+
+        - ''2013-07-17'': 0
+
+        - ''2013-07-18'': 0
+
+        - ''2013-07-19'': 0
+
+        - ''2013-07-20'': 0
+
+        - ''2013-07-21'': 0
+
+        - ''2013-07-22'': 0
+
+        - ''2013-07-23'': 0
+
+        - ''2013-07-24'': 0
+
+        - ''2013-07-25'': 0
+
+        - ''2013-07-26'': 0
+
+        - ''2013-07-27'': 0
+
+        - ''2013-07-28'': 0
+
+        - ''2013-07-29'': 0
+
+        - ''2013-07-30'': 0
+
+        - ''2013-07-31'': 0
+
+        - ''2013-08-01'': 0
+
+        - ''2013-08-02'': 0
+
+        - ''2013-08-03'': 0
+
+        - ''2013-08-04'': 0
+
+        - ''2013-08-05'': 0
+
+        - ''2013-08-06'': 0
+
+        - ''2013-08-07'': 0
+
+        - ''2013-08-08'': 0
+
+        - ''2013-08-09'': 0
+
+        - ''2013-08-10'': 0
+
+        - ''2013-08-11'': 0
+
+        - ''2013-08-12'': 0
+
+        - ''2013-08-13'': 0
+
+        - ''2013-08-14'': 0
+
+        - ''2013-08-15'': 0
+
+        - ''2013-08-16'': 0
+
+        - ''2013-08-17'': 0
+
+        - ''2013-08-18'': 0
+
+        - ''2013-08-19'': 0
+
+        - ''2013-08-20'': 0
+
+        - ''2013-08-21'': 0
+
+        - ''2013-08-22'': 0
+
+        - ''2013-08-23'': 0
+
+        - ''2013-08-24'': 0
+
+        - ''2013-08-25'': 0
+
+        - ''2013-08-26'': 0
+
+        - ''2013-08-27'': 0
+
+        - ''2013-08-28'': 0
+
+        - ''2013-08-29'': 0
+
+        - ''2013-08-30'': 0
+
+        - ''2013-08-31'': 0
+
+        - ''2013-09-01'': 0
+
+        - ''2013-09-02'': 0
+
+        - ''2013-09-03'': 0
+
+        - ''2013-09-04'': 0
+
+        - ''2013-09-05'': 0
+
+        - ''2013-09-06'': 0
+
+        - ''2013-09-07'': 0
+
+        - ''2013-09-08'': 0
+
+        - ''2013-09-09'': 0
+
+        - ''2013-09-10'': 0
+
+        - ''2013-09-11'': 0
+
+        - ''2013-09-12'': 0
+
+        - ''2013-09-13'': 0
+
+        - ''2013-09-14'': 0
+
+        - ''2013-09-15'': 16
+
+        - ''2013-09-16'': 32
+
+        - ''2013-09-17'': 4
+
+        - ''2013-09-18'': 1
+
+        - ''2013-09-19'': 3
+
+        - ''2013-09-20'': 2
+
+        - ''2013-09-21'': 2
+
+        - ''2013-09-22'': 1
+
+        - ''2013-09-23'': 0
+
+        - ''2013-09-24'': 2
+
+        - ''2013-09-25'': 6
+
+        - ''2013-09-26'': 10
+
+        - ''2013-09-27'': 3
+
+        - ''2013-09-28'': 2
+
+        - ''2013-09-29'': 1
+
+        - ''2013-09-30'': 5
+
+        - ''2013-10-01'': 0
+
+        - ''2013-10-02'': 0
+
+        - ''2013-10-03'': 0
+
+        - ''2013-10-04'': 3
+
+        - ''2013-10-05'': 0
+
+'
+    http_version: 
+  recorded_at: Fri, 20 Sep 2013 17:00:00 GMT
+- request:
+    method: get
+    uri: https://rubygems.org/api/v1/versions/haml-i18n-extractor-0.5.8/downloads.yaml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Gems 0.8.3
+      - Ruby
+      Authorization:
+      - 80fed427c6410ff1b8579fff493435dc
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 05 Oct 2013 15:28:20 GMT
+      Content-Type:
+      - text/yaml
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Status:
+      - 200 OK
+      Content-Disposition:
+      - attachment
+      Content-Transfer-Encoding:
+      - binary
+      Cache-Control:
+      - private
+      X-Content-Type-Options:
+      - nosniff
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      - IE=Edge,chrome=1
+      Etag:
+      - ! '"fdaaf886330ae584b160e46e61808763"'
+      Set-Cookie:
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:20 GMT; secure
+      X-Request-Id:
+      - 667d76b777833fe5ac6520fc0934e443
       X-Runtime:
       - '0.128462'
       X-Rack-Cache:
@@ -4193,7 +4928,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:19 GMT
+      - Sat, 05 Oct 2013 15:28:20 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -4216,11 +4951,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:19 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:20 GMT; secure
       X-Request-Id:
-      - 43a527a21965c5f59a3b0a2966af93f0
+      - 4d3d7e03748e0e48352959b2f4d1c4d2
       X-Runtime:
-      - '0.126923'
+      - '0.206477'
       X-Rack-Cache:
       - miss
     body:
@@ -4438,7 +5173,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:20:19 GMT
+      - Sat, 05 Oct 2013 15:28:20 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -4461,746 +5196,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:19 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:28:20 GMT; secure
       X-Request-Id:
-      - 35683ec19bd615bed1603276b2df011c
+      - 2320a0240a83327c1bd1e306ad670fa3
       X-Runtime:
-      - '0.239593'
-      X-Rack-Cache:
-      - miss
-    body:
-      encoding: US-ASCII
-      string: ! '--- !omap
-
-        - ''2013-07-08'': 0
-
-        - ''2013-07-09'': 0
-
-        - ''2013-07-10'': 0
-
-        - ''2013-07-11'': 0
-
-        - ''2013-07-12'': 0
-
-        - ''2013-07-13'': 0
-
-        - ''2013-07-14'': 0
-
-        - ''2013-07-15'': 0
-
-        - ''2013-07-16'': 0
-
-        - ''2013-07-17'': 0
-
-        - ''2013-07-18'': 0
-
-        - ''2013-07-19'': 0
-
-        - ''2013-07-20'': 0
-
-        - ''2013-07-21'': 0
-
-        - ''2013-07-22'': 0
-
-        - ''2013-07-23'': 0
-
-        - ''2013-07-24'': 0
-
-        - ''2013-07-25'': 0
-
-        - ''2013-07-26'': 0
-
-        - ''2013-07-27'': 0
-
-        - ''2013-07-28'': 0
-
-        - ''2013-07-29'': 0
-
-        - ''2013-07-30'': 0
-
-        - ''2013-07-31'': 0
-
-        - ''2013-08-01'': 0
-
-        - ''2013-08-02'': 0
-
-        - ''2013-08-03'': 0
-
-        - ''2013-08-04'': 0
-
-        - ''2013-08-05'': 0
-
-        - ''2013-08-06'': 0
-
-        - ''2013-08-07'': 0
-
-        - ''2013-08-08'': 0
-
-        - ''2013-08-09'': 0
-
-        - ''2013-08-10'': 0
-
-        - ''2013-08-11'': 0
-
-        - ''2013-08-12'': 0
-
-        - ''2013-08-13'': 0
-
-        - ''2013-08-14'': 0
-
-        - ''2013-08-15'': 0
-
-        - ''2013-08-16'': 0
-
-        - ''2013-08-17'': 0
-
-        - ''2013-08-18'': 0
-
-        - ''2013-08-19'': 0
-
-        - ''2013-08-20'': 0
-
-        - ''2013-08-21'': 0
-
-        - ''2013-08-22'': 0
-
-        - ''2013-08-23'': 0
-
-        - ''2013-08-24'': 0
-
-        - ''2013-08-25'': 0
-
-        - ''2013-08-26'': 0
-
-        - ''2013-08-27'': 0
-
-        - ''2013-08-28'': 0
-
-        - ''2013-08-29'': 0
-
-        - ''2013-08-30'': 0
-
-        - ''2013-08-31'': 0
-
-        - ''2013-09-01'': 0
-
-        - ''2013-09-02'': 0
-
-        - ''2013-09-03'': 0
-
-        - ''2013-09-04'': 0
-
-        - ''2013-09-05'': 0
-
-        - ''2013-09-06'': 0
-
-        - ''2013-09-07'': 0
-
-        - ''2013-09-08'': 0
-
-        - ''2013-09-09'': 0
-
-        - ''2013-09-10'': 0
-
-        - ''2013-09-11'': 0
-
-        - ''2013-09-12'': 0
-
-        - ''2013-09-13'': 0
-
-        - ''2013-09-14'': 0
-
-        - ''2013-09-15'': 16
-
-        - ''2013-09-16'': 32
-
-        - ''2013-09-17'': 4
-
-        - ''2013-09-18'': 1
-
-        - ''2013-09-19'': 3
-
-        - ''2013-09-20'': 2
-
-        - ''2013-09-21'': 2
-
-        - ''2013-09-22'': 1
-
-        - ''2013-09-23'': 0
-
-        - ''2013-09-24'': 2
-
-        - ''2013-09-25'': 6
-
-        - ''2013-09-26'': 10
-
-        - ''2013-09-27'': 3
-
-        - ''2013-09-28'': 2
-
-        - ''2013-09-29'': 1
-
-        - ''2013-09-30'': 5
-
-        - ''2013-10-01'': 0
-
-        - ''2013-10-02'': 0
-
-        - ''2013-10-03'': 0
-
-        - ''2013-10-04'': 3
-
-        - ''2013-10-05'': 0
-
-'
-    http_version: 
-  recorded_at: Fri, 20 Sep 2013 17:00:00 GMT
-- request:
-    method: get
-    uri: https://rubygems.org/api/v1/versions/haml-i18n-extractor-0.5.8/downloads.yaml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Gems 0.8.3
-      - Ruby
-      Authorization:
-      - 80fed427c6410ff1b8579fff493435dc
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Sat, 05 Oct 2013 04:20:20 GMT
-      Content-Type:
-      - text/yaml
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Status:
-      - 200 OK
-      Content-Disposition:
-      - attachment
-      Content-Transfer-Encoding:
-      - binary
-      Cache-Control:
-      - private
-      X-Content-Type-Options:
-      - nosniff
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"fdaaf886330ae584b160e46e61808763"'
-      Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:20 GMT; secure
-      X-Request-Id:
-      - 2382888f57ebf817cdefcb44b615216e
-      X-Runtime:
-      - '0.129211'
-      X-Rack-Cache:
-      - miss
-    body:
-      encoding: US-ASCII
-      string: ! '--- !omap
-
-        - ''2013-07-08'': 0
-
-        - ''2013-07-09'': 0
-
-        - ''2013-07-10'': 0
-
-        - ''2013-07-11'': 0
-
-        - ''2013-07-12'': 0
-
-        - ''2013-07-13'': 0
-
-        - ''2013-07-14'': 0
-
-        - ''2013-07-15'': 0
-
-        - ''2013-07-16'': 0
-
-        - ''2013-07-17'': 0
-
-        - ''2013-07-18'': 0
-
-        - ''2013-07-19'': 0
-
-        - ''2013-07-20'': 0
-
-        - ''2013-07-21'': 0
-
-        - ''2013-07-22'': 0
-
-        - ''2013-07-23'': 0
-
-        - ''2013-07-24'': 0
-
-        - ''2013-07-25'': 0
-
-        - ''2013-07-26'': 0
-
-        - ''2013-07-27'': 0
-
-        - ''2013-07-28'': 0
-
-        - ''2013-07-29'': 0
-
-        - ''2013-07-30'': 0
-
-        - ''2013-07-31'': 0
-
-        - ''2013-08-01'': 0
-
-        - ''2013-08-02'': 0
-
-        - ''2013-08-03'': 0
-
-        - ''2013-08-04'': 0
-
-        - ''2013-08-05'': 0
-
-        - ''2013-08-06'': 0
-
-        - ''2013-08-07'': 0
-
-        - ''2013-08-08'': 0
-
-        - ''2013-08-09'': 0
-
-        - ''2013-08-10'': 0
-
-        - ''2013-08-11'': 0
-
-        - ''2013-08-12'': 0
-
-        - ''2013-08-13'': 0
-
-        - ''2013-08-14'': 0
-
-        - ''2013-08-15'': 0
-
-        - ''2013-08-16'': 0
-
-        - ''2013-08-17'': 0
-
-        - ''2013-08-18'': 0
-
-        - ''2013-08-19'': 0
-
-        - ''2013-08-20'': 0
-
-        - ''2013-08-21'': 0
-
-        - ''2013-08-22'': 0
-
-        - ''2013-08-23'': 0
-
-        - ''2013-08-24'': 0
-
-        - ''2013-08-25'': 0
-
-        - ''2013-08-26'': 0
-
-        - ''2013-08-27'': 0
-
-        - ''2013-08-28'': 0
-
-        - ''2013-08-29'': 0
-
-        - ''2013-08-30'': 0
-
-        - ''2013-08-31'': 0
-
-        - ''2013-09-01'': 0
-
-        - ''2013-09-02'': 0
-
-        - ''2013-09-03'': 0
-
-        - ''2013-09-04'': 0
-
-        - ''2013-09-05'': 0
-
-        - ''2013-09-06'': 0
-
-        - ''2013-09-07'': 0
-
-        - ''2013-09-08'': 0
-
-        - ''2013-09-09'': 0
-
-        - ''2013-09-10'': 0
-
-        - ''2013-09-11'': 0
-
-        - ''2013-09-12'': 0
-
-        - ''2013-09-13'': 0
-
-        - ''2013-09-14'': 0
-
-        - ''2013-09-15'': 16
-
-        - ''2013-09-16'': 32
-
-        - ''2013-09-17'': 4
-
-        - ''2013-09-18'': 1
-
-        - ''2013-09-19'': 3
-
-        - ''2013-09-20'': 2
-
-        - ''2013-09-21'': 2
-
-        - ''2013-09-22'': 1
-
-        - ''2013-09-23'': 0
-
-        - ''2013-09-24'': 2
-
-        - ''2013-09-25'': 6
-
-        - ''2013-09-26'': 10
-
-        - ''2013-09-27'': 3
-
-        - ''2013-09-28'': 2
-
-        - ''2013-09-29'': 1
-
-        - ''2013-09-30'': 5
-
-        - ''2013-10-01'': 0
-
-        - ''2013-10-02'': 0
-
-        - ''2013-10-03'': 0
-
-        - ''2013-10-04'': 3
-
-        - ''2013-10-05'': 0
-
-'
-    http_version: 
-  recorded_at: Fri, 20 Sep 2013 17:00:00 GMT
-- request:
-    method: get
-    uri: https://rubygems.org/api/v1/versions/haml-i18n-extractor-0.5.8/downloads.yaml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Gems 0.8.3
-      - Ruby
-      Authorization:
-      - 80fed427c6410ff1b8579fff493435dc
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Sat, 05 Oct 2013 04:20:20 GMT
-      Content-Type:
-      - text/yaml
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Status:
-      - 200 OK
-      Content-Disposition:
-      - attachment
-      Content-Transfer-Encoding:
-      - binary
-      Cache-Control:
-      - private
-      X-Content-Type-Options:
-      - nosniff
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"fdaaf886330ae584b160e46e61808763"'
-      Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:20 GMT; secure
-      X-Request-Id:
-      - 1db2137ab68a2a64a9d0c48a9db36e7e
-      X-Runtime:
-      - '0.206054'
-      X-Rack-Cache:
-      - miss
-    body:
-      encoding: US-ASCII
-      string: ! '--- !omap
-
-        - ''2013-07-08'': 0
-
-        - ''2013-07-09'': 0
-
-        - ''2013-07-10'': 0
-
-        - ''2013-07-11'': 0
-
-        - ''2013-07-12'': 0
-
-        - ''2013-07-13'': 0
-
-        - ''2013-07-14'': 0
-
-        - ''2013-07-15'': 0
-
-        - ''2013-07-16'': 0
-
-        - ''2013-07-17'': 0
-
-        - ''2013-07-18'': 0
-
-        - ''2013-07-19'': 0
-
-        - ''2013-07-20'': 0
-
-        - ''2013-07-21'': 0
-
-        - ''2013-07-22'': 0
-
-        - ''2013-07-23'': 0
-
-        - ''2013-07-24'': 0
-
-        - ''2013-07-25'': 0
-
-        - ''2013-07-26'': 0
-
-        - ''2013-07-27'': 0
-
-        - ''2013-07-28'': 0
-
-        - ''2013-07-29'': 0
-
-        - ''2013-07-30'': 0
-
-        - ''2013-07-31'': 0
-
-        - ''2013-08-01'': 0
-
-        - ''2013-08-02'': 0
-
-        - ''2013-08-03'': 0
-
-        - ''2013-08-04'': 0
-
-        - ''2013-08-05'': 0
-
-        - ''2013-08-06'': 0
-
-        - ''2013-08-07'': 0
-
-        - ''2013-08-08'': 0
-
-        - ''2013-08-09'': 0
-
-        - ''2013-08-10'': 0
-
-        - ''2013-08-11'': 0
-
-        - ''2013-08-12'': 0
-
-        - ''2013-08-13'': 0
-
-        - ''2013-08-14'': 0
-
-        - ''2013-08-15'': 0
-
-        - ''2013-08-16'': 0
-
-        - ''2013-08-17'': 0
-
-        - ''2013-08-18'': 0
-
-        - ''2013-08-19'': 0
-
-        - ''2013-08-20'': 0
-
-        - ''2013-08-21'': 0
-
-        - ''2013-08-22'': 0
-
-        - ''2013-08-23'': 0
-
-        - ''2013-08-24'': 0
-
-        - ''2013-08-25'': 0
-
-        - ''2013-08-26'': 0
-
-        - ''2013-08-27'': 0
-
-        - ''2013-08-28'': 0
-
-        - ''2013-08-29'': 0
-
-        - ''2013-08-30'': 0
-
-        - ''2013-08-31'': 0
-
-        - ''2013-09-01'': 0
-
-        - ''2013-09-02'': 0
-
-        - ''2013-09-03'': 0
-
-        - ''2013-09-04'': 0
-
-        - ''2013-09-05'': 0
-
-        - ''2013-09-06'': 0
-
-        - ''2013-09-07'': 0
-
-        - ''2013-09-08'': 0
-
-        - ''2013-09-09'': 0
-
-        - ''2013-09-10'': 0
-
-        - ''2013-09-11'': 0
-
-        - ''2013-09-12'': 0
-
-        - ''2013-09-13'': 0
-
-        - ''2013-09-14'': 0
-
-        - ''2013-09-15'': 16
-
-        - ''2013-09-16'': 32
-
-        - ''2013-09-17'': 4
-
-        - ''2013-09-18'': 1
-
-        - ''2013-09-19'': 3
-
-        - ''2013-09-20'': 2
-
-        - ''2013-09-21'': 2
-
-        - ''2013-09-22'': 1
-
-        - ''2013-09-23'': 0
-
-        - ''2013-09-24'': 2
-
-        - ''2013-09-25'': 6
-
-        - ''2013-09-26'': 10
-
-        - ''2013-09-27'': 3
-
-        - ''2013-09-28'': 2
-
-        - ''2013-09-29'': 1
-
-        - ''2013-09-30'': 5
-
-        - ''2013-10-01'': 0
-
-        - ''2013-10-02'': 0
-
-        - ''2013-10-03'': 0
-
-        - ''2013-10-04'': 3
-
-        - ''2013-10-05'': 0
-
-'
-    http_version: 
-  recorded_at: Fri, 20 Sep 2013 17:00:00 GMT
-- request:
-    method: get
-    uri: https://rubygems.org/api/v1/versions/haml-i18n-extractor-0.5.8/downloads.yaml
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Gems 0.8.3
-      - Ruby
-      Authorization:
-      - 80fed427c6410ff1b8579fff493435dc
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Sat, 05 Oct 2013 04:20:20 GMT
-      Content-Type:
-      - text/yaml
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Status:
-      - 200 OK
-      Content-Disposition:
-      - attachment
-      Content-Transfer-Encoding:
-      - binary
-      Cache-Control:
-      - private
-      X-Content-Type-Options:
-      - nosniff
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      - IE=Edge,chrome=1
-      Etag:
-      - ! '"fdaaf886330ae584b160e46e61808763"'
-      Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:20:20 GMT; secure
-      X-Request-Id:
-      - 275ab54605d78748dc95b42287d53b78
-      X-Runtime:
-      - '0.128257'
+      - '0.195085'
       X-Rack-Cache:
       - miss
     body:

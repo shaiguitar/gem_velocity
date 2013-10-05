@@ -64,11 +64,11 @@ describe Coordinator do
   it "has a shortcut graph method" do
     VCR.use_cassette('coordinator-haml-i18n-extractor-0.5.8-graph-shortcut') do
       velocitator = Coordinator.new("haml-i18n-extractor", "0.5.8")
-      # api is: graph(root,range)
+      # api is: graph(root,range,max,min). passing nil passses defaults.
+      # move these to individual tests?
       file = velocitator.graph(SpecHelper.tmpdir,[1.day.ago, Time.now])
-      # you should be able to pass a nil root which will default to public/images
-      # you should be able to pass a nil range will default to default_range
       file = velocitator.graph
+      file = velocitator.graph(nil,nil,0,1000)
       File.exist?(file).should be_true
     end
   end

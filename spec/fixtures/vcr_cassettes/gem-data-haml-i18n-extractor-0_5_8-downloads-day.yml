@@ -28,7 +28,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 05 Oct 2013 04:21:00 GMT
+      - Sat, 05 Oct 2013 15:29:12 GMT
       Content-Type:
       - text/yaml
       Transfer-Encoding:
@@ -51,11 +51,11 @@ http_interactions:
       Etag:
       - ! '"fdaaf886330ae584b160e46e61808763"'
       Set-Cookie:
-      - remember_token=; path=/; expires=Sun, 05-Oct-2014 04:21:00 GMT; secure
+      - remember_token=; path=/; expires=Sun, 05-Oct-2014 15:29:12 GMT; secure
       X-Request-Id:
-      - a84785e69897cc7bfb47e6c52cb6905a
+      - 8f8a6e97f37eefb555d84228dc744209
       X-Runtime:
-      - '0.206200'
+      - '0.122747'
       X-Rack-Cache:
       - miss
     body:

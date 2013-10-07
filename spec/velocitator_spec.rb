@@ -13,7 +13,7 @@ describe Velocitator do
   end
 
   it "sets a specific date range according to the gem's info" do
-    VCR.use_cassette('coordinator-haml-i18n-extractor-0.5.8-versions-info') do
+    VCR.use_cassette('velocitator-haml-i18n-extractor-0.5.8-versions-info') do
       velocitator = Velocitator.new("haml-i18n-extractor", "0.5.8")
       # 1.year.ago is truncated down, because the first download was at...also, end time is :now.
       velocitator.effective_date_range.should eq ["2013-09-15T00:00:00Z", "2013-09-20T00:00:00Z"]
@@ -21,7 +21,7 @@ describe Velocitator do
   end
 
   it "can override the default time ranges if its in the range" do
-    VCR.use_cassette('coordinator-haml-i18n-extractor-0.5.8-versions-override') do
+    VCR.use_cassette('velocitator-haml-i18n-extractor-0.5.8-versions-override') do
       velocitator = Velocitator.new("haml-i18n-extractor", "0.5.8")
       # 1.year.ago is truncated down, because the first download was at...also, end time is :now.
       velocitator.date_range = [1.day.ago, Time.now]
@@ -31,7 +31,7 @@ describe Velocitator do
   end
 
   it "can set a max and min" do
-    VCR.use_cassette('coordinator-haml-i18n-extractor-0.5.8-versions') do
+    VCR.use_cassette('velocitator-haml-i18n-extractor-0.5.8-versions') do
       velocitator = Velocitator.new("haml-i18n-extractor", "0.5.8")
       lambda {
         velocitator.max_value = 500
@@ -41,7 +41,7 @@ describe Velocitator do
   end
 
   it "can render a graph" do
-    VCR.use_cassette('coordinator-haml-i18n-extractor-0.5.8-versions-graph') do
+    VCR.use_cassette('velocitator-haml-i18n-extractor-0.5.8-versions-graph') do
       velocitator = Velocitator.new("haml-i18n-extractor", "0.5.8")
       velocitator.date_range = [1.day.ago, Time.now]
       velocitator.root = SpecHelper.tmpdir
@@ -62,7 +62,7 @@ describe Velocitator do
   end
 
   it "has a shortcut graph method" do
-    VCR.use_cassette('coordinator-haml-i18n-extractor-0.5.8-graph-shortcut') do
+    VCR.use_cassette('velocitator-haml-i18n-extractor-0.5.8-graph-shortcut') do
       velocitator = Velocitator.new("haml-i18n-extractor", "0.5.8")
       # api is: graph(root,range,max,min). passing nil passses defaults.
       # move these to individual tests?

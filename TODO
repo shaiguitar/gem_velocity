@@ -1,2 +1,17 @@
 move VCR to an :around spec
 wtf? does a time period actually work?
+
+## Collection
+
+Have a grapher class that takes a collection on singular and builds the corresponding gruff? Graph.buid(coolextion) vs collection.graph
+
+All of them have same date range max min, same line_data size
+
+Make sure to pad 0's 
+
+Earliest date, latest date
+
+Most max of all 
+
+Have a date-calc abstraction that does all the padding calculation aggregation?
+

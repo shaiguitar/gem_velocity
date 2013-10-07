@@ -2,45 +2,48 @@ class Velocitator
 
   include ::Helpers
 
-  attr_accessor :gem_name, :version
+  attr_accessor :gem_name, :versions
 
   # modifiers on the end result image being rendered.
   attr_accessor :date_range, :max_value, :min_value, :root
 
-  def initialize(gem_name, version)
+  def initialize(gem_name, versions)
     @gem_name = gem_name || raise(ArgumentError, 'need a name')
-    @version = version || raise(ArgumentError, 'need a version')
+    @versions = if versions.is_a?(String) 
+                  [versions]
+                else
+                  versions
+                end || raise(ArgumentError, 'required versions')
   end
 
   def date_range=(args)
     return nil if args.nil?
     unless args.is_a?(Array) && args.size == 2
-      raise(ArgumentError, "must pass a range like [start,end]")
+      raise(ArgumentError, "must pass a range with time objects like [start,end]")
     end
     @date_range = args.map{|t| time_format_str(t) }
   end
 
-  def line_data
-    gem_data.downloads_day(version).map {|day,total|
-      total if specific_days_in_range.include?(Date.parse(day))
-    }.compact
+  def line_datas
+    versions.map do |v|
+      specific_days_in_range.map do |day_in_range|
+        day_in_range = time_format_str_small(day_in_range) #conform to rubygems api format
+        if gem_data.downloads_day(v).map {|day,total| day}.include?(day_in_range)
+          total = Hash[gem_data.downloads_day(v)][day_in_range]
+        else
+          0
+        end
+      end
+    end
   end
 
   def effective_date_range
     # we allow overwriting by passing a date range.
-    return @range if @range
-    if date_range
-      if start_time && end_time
-        @range = start_time, end_time
-      elsif start_time && !end_time
-        @range = start_time, default_end
-      elsif !start_time && end_time
-        @range = default_start, end_time
-      end
+    if @date_range.is_a?(Array) && @date_range.compact.size==2
+      @date_range
     else
-      @range = default_date_range
+      default_date_range
     end
-    @range
   end
 
   # call, after you set all the attributes you want.
@@ -50,14 +53,15 @@ class Velocitator
   # date_range (leave nil for default values in either start or end)
   def gruff_builder
     opts = {
-      :title => "#{gem_name}-#{version}",
+      :title => "#{gem_name}-#{versions.join("-")}",
       # just the first and last dates. give a small offset so it fits into the pciture.
-      :labels => ({1 => time_format_str_small(effective_start_time), (line_data.size-2) => time_format_str_small(effective_end_time) }),
+      # line_datas.first.size -2 should be the max of any one of the line-datas, all should be same size.
+      :labels => ({1 => time_format_str_small(effective_start_time), (line_datas.first.size-2) => time_format_str_small(effective_end_time) }),
       :max_value => max_value || default_max_value,
       :min_value => min_value || default_min_value,
-      :line_data => line_data
+      :line_datas => line_datas
     }
-    builder = GruffBuilder.new(@root || Dir.pwd,nil,version,gem_name,opts)
+    builder = GruffBuilder.new(@root || Dir.pwd,nil,versions,gem_name,opts)
     builder
   end
 
@@ -82,19 +86,22 @@ class Velocitator
     all_days
   end
 
+  def default_min_value
+    0
+  end
+
+  def default_max_value
+    totals = []
+    versions.each {|v|
+      totals << gem_data.downloads_day(v).map {|day,total| total}
+    }
+    totals.flatten.compact.max
+  end
+
   private
 
-  def start_time
-    date_range.first
-  end
-
-  def end_time
-    date_range.last
-  end
-
   def effective_start_time
-    # the most recent day found
-    [ effective_date_range.first, gem_data.downloads_day(version).first.first ].sort.last
+    effective_date_range.first
   end
 
   def effective_end_time
@@ -106,27 +113,19 @@ class Velocitator
   end
 
   def default_start
-    default_start = time_format_str(time_built)
+    earliest_start = versions.map{|v| Date.parse(time_built(v)) }.min
+    default_start = time_format_str(earliest_start)
   end
-  
+
   def default_end
     default_end = time_format_str(Time.now)
   end
 
-  def time_built
+  def time_built(version)
     gem_data.versions_built_at[version]
   end
 
   def gem_data
-    gem_data ||= GemData.new(@gem_name)
+    @gem_data ||= GemData.new(@gem_name)
   end
-
-  def default_min_value
-    0
-  end
-
-  def default_max_value
-    gem_data.downloads_day(version).map {|day,total| total}.compact.max
-  end
-
 end

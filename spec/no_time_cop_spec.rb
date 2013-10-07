@@ -1,14 +1,7 @@
-# GemVelocity
+require 'spec_helper'
 
-A way to see gem velocity. Right now it's just aggregated totals.
+describe 'with no time stubbing' do
 
-So, not a number of downloads each day, but rather just the general timeline of total downloads.
-
-# Example
-
-This spec below:
-
-<pre>
   it "has a shortcut graph method #1" do
     VCR.use_cassette('velocitator-rails-multiple-graph-shortcut-3') do
       velocitator = Velocitator.new("rails", ["4.0.0","3.2.14","2.3.5"])
@@ -16,15 +9,7 @@ This spec below:
       File.exist?(file).should be_true
     end
   end
-</pre>
 
-Produces:
-
-![here](examples/rails-4.0.0-3.2.14-2.3.5.png)
-
-This spec below (notice the date range):
-
-<pre>
   it "has a shortcut graph method #2" do
     VCR.use_cassette('velocitator-rails-multiple-graph-shortcut-4') do
       velocitator = Velocitator.new("rails", ["4.0.0","3.2.14","0.9.1"])
@@ -32,10 +17,6 @@ This spec below (notice the date range):
       File.exist?(file).should be_true
     end
   end
-</pre>
 
-Produces:
+end
 
-![here](examples/rails-4.0.0-3.2.14-0.9.1.png)
-
-Also, you should be able to pass in max,min values to size the graph. See `spec/` for more info.

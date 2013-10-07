@@ -16,6 +16,7 @@ class GemData
   end
 
   def downloads_day(version)
+    # todo rename method? aggregated downloads per day
     total_so_far = 0
     # start day 0 as first download day.
     found_first_download = false

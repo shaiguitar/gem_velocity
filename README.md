@@ -10,32 +10,24 @@ It draws graphs. So...you'll need imagemagick/rmagick. I'm sure you'll survive. 
 
 # Example
 
-This spec below:
+Here's one: [celluloid](https://gist.github.com/shaiguitar/7e6d95971c5254fa3665)
+
+Here's some more:
 
 <pre>
-  it "has a shortcut graph method #1" do
-    VCR.use_cassette('velocitator-rails-multiple-graph-shortcut-3') do
-      velocitator = Velocitator.new("rails", ["4.0.0","3.2.14","2.3.5"])
-      file = velocitator.graph("/tmp")
-      File.exist?(file).should be_true
-    end
-  end
+  velocitator = Velocitator.new("rails", ["4.0.0","3.2.14","2.3.5"])
+  file = velocitator.graph("/tmp")
 </pre>
 
 Produces:
 
 ![here](examples/rails-4.0.0-3.2.14-2.3.5.png)
 
-This spec below (notice the date range):
+Notice the date range:
 
 <pre>
-  it "has a shortcut graph method #2" do
-    VCR.use_cassette('velocitator-rails-multiple-graph-shortcut-4') do
-      velocitator = Velocitator.new("rails", ["4.0.0","3.2.14","0.9.1"])
-      file = velocitator.graph("/tmp", [3.months.ago, Time.now])
-      File.exist?(file).should be_true
-    end
-  end
+  velocitator = Velocitator.new("rails", ["4.0.0","3.2.14","0.9.1"])
+  file = velocitator.graph("/tmp", [3.months.ago, Time.now])
 </pre>
 
 Produces:

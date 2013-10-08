@@ -42,4 +42,8 @@ Produces:
 
 ![here](examples/rails-4.0.0-3.2.14-0.9.1.png)
 
-Also, you should be able to pass in max,min values to size the graph. See `spec/` for more info.
+Also, you should be able to pass in max,min values which completes you being able to manipulate the boundries of the graph in question.
+
+## Feedback
+
+Is appreciated! Any ideas?

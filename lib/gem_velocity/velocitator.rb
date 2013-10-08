@@ -1,3 +1,9 @@
+begin
+  require 'active_support/all'
+rescue
+  'you need activesupport. please install'
+end
+
 class Velocitator
 
   include ::Helpers

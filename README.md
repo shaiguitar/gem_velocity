@@ -4,6 +4,10 @@ A way to see gem velocity. Right now it's just aggregated totals.
 
 So, not a number of downloads each day, but rather just the general timeline of total downloads.
 
+## Requirements
+
+It draws graphs. So...you'll need imagemagick/rmagick. I'm sure you'll survive. Any problems with installation let me know and I'll try to help out.
+
 # Example
 
 This spec below:

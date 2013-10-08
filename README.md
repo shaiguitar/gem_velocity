@@ -44,6 +44,12 @@ Produces:
 
 Also, you should be able to pass in max,min values which completes you being able to manipulate the boundries of the graph in question.
 
+## Web UI
+
+Do you want to see this with ease (Hey, the api is easy. Whatever) on the web at `http://rubygems-velocity.org/gem/rails/4.0.0,3.2.14` or something similar? I could do it, but I need to know it's worth the hassle.
+
+Lemme know.
+
 ## Feedback
 
-Is appreciated! Any ideas?
+Is appreciated! Any (other) ideas?

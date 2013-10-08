@@ -1,3 +1,4 @@
 move VCR to an :around spec
 change readme.md to have one example with different options to populate
 
+Add an aggregate method to add #graph for a point version? (e.g, 0.n.x graph for all n versions. maybe just major, maybe minor, whatever).

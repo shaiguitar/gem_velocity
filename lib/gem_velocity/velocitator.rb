@@ -15,7 +15,7 @@ class Velocitator
 
   def initialize(gem_name, versions)
     @gem_name = gem_name || raise(ArgumentError, 'need a name')
-    @versions = if versions.is_a?(String) 
+    @versions = if versions.is_a?(String)
                   [versions]
                 else
                   versions
@@ -28,6 +28,19 @@ class Velocitator
       raise(ArgumentError, "must pass a range with time objects like [start,end]")
     end
     @date_range = args.map{|t| time_format_str(t) }
+  end
+
+  def effective_date_range
+    # we allow overwriting by passing a date range.
+    if @date_range.is_a?(Array) && @date_range.compact.size==2
+      @date_range
+    else
+      default_date_range
+    end
+  end
+
+  def title
+    "#{gem_name}-#{versions.join("-")}"
   end
 
   def line_datas
@@ -43,23 +56,13 @@ class Velocitator
     end
   end
 
-  def effective_date_range
-    # we allow overwriting by passing a date range.
-    if @date_range.is_a?(Array) && @date_range.compact.size==2
-      @date_range
-    else
-      default_date_range
-    end
-  end
-
-  # call, after you set all the attributes you want.
+  # after you set all the attributes you want.
   # you can set (or there will be fallback defaults)
-  #
   # max, min
   # date_range (leave nil for default values in either start or end)
   def gruff_builder
     opts = {
-      :title => "#{gem_name}-#{versions.join("-")}",
+      :title => title,
       # just the first and last dates. give a small offset so it fits into the pciture.
       # line_datas.first.size -2 should be the max of any one of the line-datas, all should be same size.
       :labels => ({1 => time_format_str_small(effective_start_time), (line_datas.first.size-2) => time_format_str_small(effective_end_time) }),

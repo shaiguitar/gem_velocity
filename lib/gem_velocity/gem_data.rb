@@ -15,18 +15,19 @@ class GemData
     h
   end
 
-  def downloads_day(version)
-    # todo rename method? aggregated downloads per day
+  # todo rename method? aggregated downloads per day
+  def downloads_day(version, start_time = nil, end_time = Time.now)
+    start_time = start_time || versions_built_at[version]
     total_so_far = 0
-    # start day 0 as first download day.
     found_first_download = false
-    ret = downloads_metadata(version).map do |day,downloads_that_day|
+    ret = downloads_metadata(version, start_time, end_time).map do |day,downloads_that_day|
       if found_first_download
         total_so_far += downloads_that_day
         [day, total_so_far]
       else
         if !downloads_that_day.zero?
           found_first_download = true
+          total_so_far += downloads_that_day
           nil
         end
       end
@@ -40,11 +41,11 @@ class GemData
     @versions_metadata ||= Gems.versions(@name)
   end
 
-  def downloads_metadata(version)
+  def downloads_metadata(version, start_time, end_time)
     # cache api call.
     @downloads_metadata ||= {}
     return @downloads_metadata[version] if @downloads_metadata[version]
-    @downloads_metadata[version] ||= Gems.downloads(@name, version).to_a
+    @downloads_metadata[version] ||= Gems.downloads(@name, version, start_time, end_time).to_a
   end
 
 

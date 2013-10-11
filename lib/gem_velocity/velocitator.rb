@@ -20,6 +20,8 @@ class Velocitator
                 else
                   versions
                 end || raise(ArgumentError, 'required versions')
+    validate_correct_gem
+    validate_correct_versions
   end
 
   def date_range=(args)
@@ -137,4 +139,16 @@ class Velocitator
   def gem_data
     @gem_data ||= GemData.new(@gem_name)
   end
+
+  def validate_correct_versions
+    versions.each do |v|
+      gem_data.versions.include?(v) || raise(NoSuchVersion,"version not found for #{versions}.")
+    end
+  end
+
+  def validate_correct_gem
+    # this will bomb out if bad version is passed.
+    gem_data.versions_metadata
+  end
+
 end

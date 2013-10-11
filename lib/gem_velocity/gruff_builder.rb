@@ -7,8 +7,6 @@ end
 
 class GruffBuilder
 
-  class NoData < StandardError; end
-
   MIN_VALUE = 0
   MAX_VALUE = 300
 
@@ -16,9 +14,9 @@ class GruffBuilder
   attr_accessor :title, :labels, :line_datas, :min_value, :max_value
 
   def initialize(root, relative_path, versions, gem_name, gruff_options = {})
-    @root = root || raise("you must set a root. default is root/public/images")
+    @root = root || raise(ArgumentError,"you must set a root. default is root/public/images")
     @relative_path = relative_path || "public/images/"
-    @versions = versions.is_a?(Array) ? versions : raise("versions must be an array")
+    @versions = versions.is_a?(Array) ? versions : raise(ArgumentError,"versions must be an array")
     @gem_name = gem_name
     @title = gruff_options[:title] || ""
     @labels = gruff_options[:labels] || {}

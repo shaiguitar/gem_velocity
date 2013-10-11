@@ -34,12 +34,19 @@ class GemData
     end.compact
   end
 
-  private
-
   def versions_metadata
     # cache api call.
     @versions_metadata ||= Gems.versions(@name)
+    # it should be a hash
+    if @versions_metadata.is_a?(String)
+      if @versions_metadata.match(/This rubygem could not be found/)
+        raise(NoSuchGem, "This rubygem could not be found")
+      end
+    end
+    @versions_metadata
   end
+
+  private
 
   def downloads_metadata(version, start_time, end_time)
     # cache api call.

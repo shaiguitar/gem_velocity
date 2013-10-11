@@ -6,7 +6,16 @@ describe Velocitator do
     lambda { Velocitator.new(nil,nil) }.should raise_error ArgumentError
   end
 
-  describe "a specific version" do
+  it 'raises if the gem is not found' do
+    lambda { Velocitator.new("NOSICHGEMPlZ123","0.1") }.should raise_error NoSuchGem
+  end
+
+  it 'raises if the version is not found' do
+    # cause the .pre matters!!1
+    lambda { Velocitator.new("haml-i18n-extractor","100.999.42.666.pre") }.should raise_error NoSuchVersion
+  end
+
+ describe "a specific version" do
 
     it "sets a specific date range according to the gem's info" do
       velocitator = Velocitator.new("haml-i18n-extractor", "0.0.17")

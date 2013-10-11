@@ -2,33 +2,11 @@ require 'spec_helper'
 
 describe Velocitator do
 
-  before do
-    # for Time.now
-    # Also, the 10 mins flattens out to 00: but we don't care at this point as it's day by day.
-    Timecop.travel(Time.local(2013, 9, 20, 10, 0, 0))
-    Timecop.freeze
-  end
-
-  after do
-    Timecop.return
-  end
-
   it 'raises if you dont pass name and version(s)' do
     lambda { Velocitator.new(nil,nil) }.should raise_error ArgumentError
   end
 
   describe "a specific version" do
-
-    before do
-      # for Time.now
-      # Also, the 10 mins flattens out to 00: but we don't care at this point as it's day by day.
-      Timecop.travel(Time.local(2013, 9, 20, 10, 0, 0))
-      Timecop.freeze
-    end
-
-    after do
-      Timecop.return
-    end
 
     it "sets a specific date range according to the gem's info" do
       velocitator = Velocitator.new("haml-i18n-extractor", "0.0.17")
@@ -94,13 +72,6 @@ describe Velocitator do
   describe "Multiple versions" do
     before do 
       @some_versions = ["0.0.17", "0.0.5","0.0.10"]
-      Timecop.travel(Time.local(2013, 9, 20, 10, 0, 0))
-      Timecop.freeze
-
-    end
-
-    after do
-      Timecop.return
     end
 
     it "can initialize multiple versions" do

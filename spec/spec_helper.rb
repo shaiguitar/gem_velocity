@@ -18,6 +18,19 @@ module SpecHelper
 end
 
 RSpec.configure do |c|
+  c.treat_symbols_as_metadata_keys_with_true_values = true
+  c.around(:each) do |example|
+    #freeze time unless explicitly said not to!
+    unless example.metadata[:do_not_use_time_cop]
+      Timecop.travel(Time.local(2013, 9, 20, 10, 0, 0))
+      Timecop.freeze
+    end
+    example.run
+    unless example.metadata[:do_not_use_time_cop]
+      Timecop.return
+    end
+  end
+
   c.around(:each) do |example|
     example_hashified = example.metadata[:description_args].first.unpack("s").first
     puts "\nRunning example: #{example.metadata[:description_args]}\n"

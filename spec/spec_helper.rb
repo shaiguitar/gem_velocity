@@ -19,6 +19,17 @@ end
 
 RSpec.configure do |c|
   c.treat_symbols_as_metadata_keys_with_true_values = true
+
+  c.around(:each) do |example|
+    example_hashified = example.metadata[:description_args].first.unpack("s").first
+    puts "\nRunning example: #{example.metadata[:description_args]}\n"
+    orig_time = Time.now
+    VCR.use_cassette("rspec-example-#{(example_hashified)}") do
+      example.run
+    end
+    puts "finished in ~#{Time.now.to_i - orig_time.to_i}s"
+  end
+
   c.around(:each) do |example|
     #freeze time unless explicitly said not to!
     unless example.metadata[:do_not_use_time_cop]
@@ -28,14 +39,6 @@ RSpec.configure do |c|
     example.run
     unless example.metadata[:do_not_use_time_cop]
       Timecop.return
-    end
-  end
-
-  c.around(:each) do |example|
-    example_hashified = example.metadata[:description_args].first.unpack("s").first
-    puts "\nRunning example: #{example.metadata[:description_args]}\n"
-    VCR.use_cassette("rspec-example-#{(example_hashified)}") do
-      example.run
     end
   end
 

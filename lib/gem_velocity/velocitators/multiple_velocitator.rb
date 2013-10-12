@@ -5,16 +5,11 @@ class MultipleVelocitator < BaseVelocitator
   end
 
   def default_start
-    earliest_start = versions.map{|v| Date.parse(time_built(v)) }.min
-    default_start = time_format_str(earliest_start)
+    base_earliest_time_for(versions)
   end
 
   def default_max_value
-    totals = []
-    versions.each {|v|
-      totals << gem_data.downloads_day(v).map {|day,total| total}
-    }
-    totals.flatten.compact.max
+    base_max_for(versions)
   end
 
   def graph_options
@@ -32,7 +27,7 @@ class MultipleVelocitator < BaseVelocitator
   end
 
   def title
-    "MutlipleVelocitator:#{gem_name}"
+    "#{gem_name}"
   end
 
 

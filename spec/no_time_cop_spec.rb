@@ -2,8 +2,10 @@ require 'spec_helper'
 
 describe 'with no time stubbing', :do_not_use_time_cop do
 
-  #if ENV['VELOCITATOR_REAL_LONG']
+  # hax slow internet connections make this slow.
+  if ENV['VELOCITATOR_REAL_LONG']
     it "has a shortcut graph method #1" do
+      velocitator = SingleVelocitator.new("rails", "2.3.5")
       # WTF all is shit
       # https://rubygems.org/gems/rails/versions/2.3.5
       # should be close to 1m!!
@@ -24,17 +26,35 @@ describe 'with no time stubbing', :do_not_use_time_cop do
       # x.to_a.index{|z| z.last.nonzero?}
       # => 1198
       velocitator = SingleVelocitator.new("rails", "2.3.5")
-      file = velocitator.graph("/tmp")
+      #x.to_a.index{|z| z.last.nonzero?}
       #binding.pry
+      file = velocitator.graph("/tmp")
       raise 'wtf'
     end
 
-    #it "has a shortcut graph method #2" do
-      #velocitator = Velocitator.new("rails", ["4.0.0","3.2.14","0.9.1"])
-      #file = velocitator.graph("/tmp", [3.months.ago, Time.now])
-      #File.exist?(file).should be_true
-    #end
-  #end
+    it "has a shortcut graph method #2" do
+      velocitator = MultipleVelocitator.new("rails", ["4.0.0","3.2.14","0.9.1"])
+      file = velocitator.graph("/tmp", [3.months.ago, Time.now])
+      File.exist?(file).should be_true
+    end
+
+    it "has a shortcut graph method #3" do
+      velocitator = AggregatedVelocitator.new("rails", "4")
+      puts velocitator.versions
+      puts velocitator.totals.inspect
+      file = velocitator.graph("/tmp")
+      File.exist?(file).should be_true
+    end
+
+    it "has a shortcut graph method #4" do
+      velocitator = AggregatedVelocitator.new("haml-i18n-extractor", "0") # all of it
+      puts velocitator.aggregated_versions
+      puts velocitator.versions
+      file = velocitator.graph("/tmp")
+      puts file.inspect
+      File.exist?(file).should be_true
+    end
+  end
 
 end
 

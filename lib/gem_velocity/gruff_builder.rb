@@ -11,7 +11,7 @@ class GruffBuilder
   MAX_VALUE = 300
 
   attr_accessor :root, :relative_path, :versions, :gem_name
-  attr_accessor :title, :labels, :line_datas, :min_value, :max_value
+  attr_accessor :title, :labels, :line_datas, :min_value, :max_value, :hide_legend
 
   def initialize(root, relative_path, versions, gem_name, gruff_options = {})
     @root = root || raise(ArgumentError,"you must set a root. default is root/public/images")
@@ -23,6 +23,7 @@ class GruffBuilder
     @line_datas = gruff_options[:line_datas]
     @min_value = gruff_options[:min_value] || MIN_VALUE
     @max_value = gruff_options[:max_value] || MAX_VALUE
+    @hide_legend = gruff_options[:hide_legend] || false
   end
 
   def relative_filename
@@ -47,6 +48,7 @@ class GruffBuilder
     end
     gruff.minimum_value = @min_value
     gruff.maximum_value = @max_value
+    gruff.hide_legend = @hide_legend
     gruff.write(absolute_filename)
     absolute_filename
   end

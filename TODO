@@ -1,29 +1,14 @@
-move VCR to an :around spec
-change readme.md to have one example with different options to populate
-Add an aggregate method to add #graph for a point version? (e.g, 0.n.x graph for all n versions. maybe just major, maybe minor, whatever).
-
-web ui/embeddable links with those images.
+Web ui/embeddable links with those images.
   can't remove images
   have uniq name: hash the date_range,max,min,name,versions. (and time?)
   shard the directories of where the image goes so it doesn't bomb out?
 
-SingleVersionsVelocitator takes versions
-SingleVersionsVelocitator has a shortcut for displaying all versions in a major?
-MajorVersionsVelocitator takes one major version
-AllVersionsVelocitator takes no version, dispalys all stats
+Add a Version?
 
-I want to be able to have a line be one version, or a few versions in one, mix those/not, then decide to display them in the end
-  line_datas needs to be abstracted away. actually the versions concepts should be eliminated??
-    so I need to have something abstract a version but it could be a few of them...
-      move all the logic of changing version -> line_data into something and have that able to handle 1 or n.
+currently, the versions in the base class are single versions, but they are essentially used for representing a specific line
+in default_line_datas.
+(and then used for titles, abd bs).
 
-      the only thing that it implmeents is .graph() which returns the line_data result/info whatever.
-      then there's something in the middle that takes that and calls out to gruff builder.
+if rubygems 606 isn't solved, why not just put a total on there and let the inconsistnecies just be with some notice?
 
-
-all derived classes need to pass back to base class, so we can pass on to builder:
-
-  line_data => title,version(s) 
-  n times whatever.
-
-  Add a Version?
+rename time_format_str_small alias

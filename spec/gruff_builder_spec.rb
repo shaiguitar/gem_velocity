@@ -48,6 +48,7 @@ describe GruffBuilder do
       :line_datas => [1,2,3,10,8,12],
       :min_value => 0,
       :max_value => 20,
+      :hide_legend => true
     }
     builder = GruffBuilder.new(@tmp_dir,nil,["0.0.17"],"foo-baz", gruff_options)
     builder.write

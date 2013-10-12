@@ -15,7 +15,8 @@ class BaseVelocitator
     gruff_builder.write
   end
 
-  # modifiers on the end result image being rendered.
+  # modifiers on the end result image being rendered. Essentially these are the boundries
+  # of the graph
   attr_reader :date_range, :max_value, :min_value, :root
   def date_range=(args); @passed_date_range = args && args.map{|t| time_format_str(t) } ;end
   def max_value=(max); @passed_max_value = max ;end
@@ -23,7 +24,7 @@ class BaseVelocitator
   def root=(path); @root = path ;end
 
   def effective_date_range
-    @passed_date_range || [ default_start, default_end ]
+    @passed_date_range || default_date_range
   end
 
   def effective_max_value
@@ -32,6 +33,12 @@ class BaseVelocitator
 
   def effective_min_value
     @passed_min_value || default_min_value
+  end
+
+  def totals
+    versions.map do |v|
+      gem_data.total_for_version(v)
+    end
   end
 
   private
@@ -54,8 +61,6 @@ class BaseVelocitator
     gem_data.versions_metadata
   end
 
-   # if it's nil, the defaults will be used
-  # basically these are the graph boundries
   def set_overwritable_attrs(root_arg,range,min,max)
     self.date_range = range
     self.root = root_arg
@@ -67,23 +72,51 @@ class BaseVelocitator
     default_end = time_format_str(Time.now)
   end
 
+  def default_date_range
+    [ default_start, default_end ]
+  end
+
   def default_min_value
     0
   end
 
   def default_line_datas
-    # refactor me?
     versions.map do |v|
-      specific_days_in_range.map do |day_in_range|
-        day_in_range = time_format_str_small(day_in_range) #conform to rubygems api format
-        if gem_data.downloads_day(v).map {|day,total| day}.include?(day_in_range)
-          # get the total for that day
-          total = Hash[gem_data.downloads_day(v)][day_in_range]
-        else
-          0
-        end
+      effective_days_in_range.map do |d|
+        downloads_per_day(v)[d] || 0
       end
     end
+  end
+
+  def base_earliest_time_for(verzionz)
+    earliest_start = verzionz.map{|v| Date.parse(time_built(v)) }.min
+    default_start = time_format_str(earliest_start)
+  end
+
+  def base_max_for(verzionz)
+    totals = []
+    verzionz.each {|v|
+      totals << downloads_per_day(v).map {|day,total| total}
+    }
+    totals.flatten.compact.max
+  end
+
+  def downloads_per_day(version)
+    # returns # "2013-10-10" => 45
+    accumulated_downloads_per_day(version)
+  end
+
+  def accumulated_downloads_per_day(version)
+    # downloads_metadata comes back ordered by date
+    ret = Hash.new(0)
+    gem_data.downloads_metadata(version, default_start, default_end).each_cons(2) do |p,n|
+      #day,total pairs
+      curr_total = n.last
+      day = n.first
+      previous_day = p.first
+      ret[day] = curr_total + ret[previous_day]
+    end
+    ret
   end
 
   # a little sugar
@@ -91,8 +124,8 @@ class BaseVelocitator
   def effective_end_time; effective_date_range.last ;end
 
   # helper method to convert [start,end] into a 
-  # start..end range of day instances
-  def specific_days_in_range
+  # start..end range of days like "2013-10-10"
+  def effective_days_in_range
     all_days = []
     s = Date.parse(effective_start_time)
     e = Date.parse(effective_end_time)
@@ -101,7 +134,7 @@ class BaseVelocitator
       all_days << i
       i += 1.day
     end
-    all_days
+    all_days.map{|d| time_format_str_small(d)}
   end
 
   def gem_data

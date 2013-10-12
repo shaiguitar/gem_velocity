@@ -15,7 +15,7 @@ Here's one: [celluloid](https://gist.github.com/shaiguitar/7e6d95971c5254fa3665)
 Here's some more:
 
 <pre>
-  velocitator = Velocitator.new("rails", ["4.0.0","3.2.14","2.3.5"])
+  velocitator = MultipleVelocitator.new("rails", ["4.0.0","3.2.14","2.3.5"])
   file = velocitator.graph("/tmp")
 </pre>
 
@@ -26,7 +26,7 @@ Produces:
 Notice the date range:
 
 <pre>
-  velocitator = Velocitator.new("rails", ["4.0.0","3.2.14","0.9.1"])
+  velocitator = MultipleVelocitator.new("rails", ["4.0.0","3.2.14","0.9.1"])
   file = velocitator.graph("/tmp", [3.months.ago, Time.now])
 </pre>
 

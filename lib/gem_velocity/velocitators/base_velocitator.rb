@@ -17,13 +17,21 @@ class BaseVelocitator
 
   # modifiers on the end result image being rendered.
   attr_reader :date_range, :max_value, :min_value, :root
-  def date_range=(args); @date_range = args && args.map{|t| time_format_str(t) } ;end
-  def max_value=(max); @max_value = max ;end
-  def min_value=(min); @min_value = min ;end
+  def date_range=(args); @passed_date_range = args && args.map{|t| time_format_str(t) } ;end
+  def max_value=(max); @passed_max_value = max ;end
+  def min_value=(min); @passed_min_value = min ;end
   def root=(path); @root = path ;end
 
   def effective_date_range
-    @date_range || [ default_start, default_end ]
+    @passed_date_range || [ default_start, default_end ]
+  end
+
+  def effective_max_value
+    @passed_max_value || default_max_value
+  end
+
+  def effective_min_value
+    @passed_min_value || default_min_value
   end
 
   private

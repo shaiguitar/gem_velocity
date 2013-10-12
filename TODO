@@ -16,3 +16,14 @@ I want to be able to have a line be one version, or a few versions in one, mix t
   line_datas needs to be abstracted away. actually the versions concepts should be eliminated??
     so I need to have something abstract a version but it could be a few of them...
       move all the logic of changing version -> line_data into something and have that able to handle 1 or n.
+
+      the only thing that it implmeents is .graph() which returns the line_data result/info whatever.
+      then there's something in the middle that takes that and calls out to gruff builder.
+
+
+all derived classes need to pass back to base class, so we can pass on to builder:
+
+  line_data => title,version(s) 
+  n times whatever.
+
+  Add a Version?

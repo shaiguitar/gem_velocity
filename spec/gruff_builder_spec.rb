@@ -30,7 +30,7 @@ describe GruffBuilder do
 
   it "can not write a file if there is no line data" do
     builder = GruffBuilder.new(@tmp_dir,nil,["0.0.17"],"foo-baz", {})
-    lambda { builder.write }.should raise_error GruffBuilder::NoData
+    lambda { builder.write }.should raise_error NoData
   end
 
   it "can write out a file" do

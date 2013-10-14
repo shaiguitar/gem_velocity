@@ -4,6 +4,14 @@ A way to see gem velocity. Right now it's just aggregated totals.
 
 So, not a number of downloads each day, but rather just the general timeline of total downloads.
 
+## Note
+
+The data is currently somewhat incorrect, due to inconstancies outlined in:
+
+[https://gist.github.com/shaiguitar/d2af997b7f58e24fd305](https://gist.github.com/shaiguitar/d2af997b7f58e24fd305)
+
+I'm investigating though with the help of the rubygems team as per [this](https://github.com/rubygems/rubygems.org/pull/606) and will hopefully have some progress soon.
+
 ## Requirements
 
 It draws graphs. So...you'll need imagemagick/rmagick. I'm sure you'll survive. Any problems with installation let me know and I'll try to help out.

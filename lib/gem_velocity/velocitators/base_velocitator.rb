@@ -41,6 +41,11 @@ class BaseVelocitator
     end
   end
 
+  def num_downloads
+    sum = totals.map {|t| t[:version_downloads]}.sum
+    ActiveSupport::NumberHelper.number_to_delimited(sum)
+  end
+
   private
 
   def initialize(gem_name, versions)

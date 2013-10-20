@@ -15,7 +15,7 @@ describe "a Velocitator rendering graphs" do
     # should this be the specific date range values?? aggregated since when? not aggregated?
     velocitator.graph_options[:line_datas].should == [[303, 303, 303, 304, 304]]
 
-    velocitator.graph_options[:title].should == "haml-i18n-extractor-0.0.17"
+    velocitator.graph_options[:title].should == "haml-i18n-extractor-0.0.17\n(downloads: 377)"
     velocitator.graph_options[:labels].should == ({1=>"2013-09-13", (velocitator.line_datas.first.size-2) =>"2013-09-17"})
     velocitator.graph_options[:max_value].should == 306 # the max in the range (time.now)
     velocitator.graph_options[:min_value].should == 0
@@ -60,7 +60,7 @@ describe SingleVelocitator do
 
   it "holds the totals of the gem" do
     velocitator = SingleVelocitator.new("haml-i18n-extractor", "0.0.17")
-    velocitator.totals.should == {:total_downloads=>5355, :version_downloads=>377}
+    velocitator.totals.first[:version_downloads].should eq 377
     #binding.pry
   end
 
@@ -103,7 +103,7 @@ describe MultipleVelocitator do
 
   it "holds the totals of the gem" do
     velocitator = MultipleVelocitator.new("haml-i18n-extractor", ["0.0.17"])
-    velocitator.totals.should eq [{:total_downloads=>5355, :version_downloads=>377}]
+    velocitator.totals.first[:version_downloads].should eq 377
   end
 
   it "sets the earliest start range from to all of the versions info" do

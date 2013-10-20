@@ -38,11 +38,7 @@ class AggregatedVelocitator < BaseVelocitator
   end
 
   def title
-    "#{@gem_name}: #{@top_level_ver}X"
-  end
-
-  def totals
-    super.map {|x| x[:version_downloads]}.sum
+    "#{@gem_name}: #{@top_level_ver}X\n(downloads: #{num_downloads})"
   end
 
 end

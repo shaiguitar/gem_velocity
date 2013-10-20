@@ -12,3 +12,5 @@ in default_line_datas.
 if rubygems 606 isn't solved, why not just put a total on there and let the inconsistnecies just be with some notice?
 
 rename time_format_str_small alias
+
+swap out gruff_builder to some other composing object of a builder, that can mash up the various velocitators?

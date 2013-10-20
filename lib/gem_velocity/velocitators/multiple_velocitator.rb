@@ -18,7 +18,7 @@ class MultipleVelocitator < BaseVelocitator
       :labels => ({1 => time_format_str_small(effective_start_time), (line_datas.first.size-2) => time_format_str_small(effective_end_time) }),
       :max_value => effective_max_value,
       :min_value => effective_min_value,
-      :line_datas => line_datas
+      :line_datas => line_datas,
     }
   end
 

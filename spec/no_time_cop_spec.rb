@@ -25,11 +25,11 @@ describe 'with no time stubbing', :do_not_use_time_cop do
       # x = Gems.downloads(velocitator.gem_name, velocitator.versions.first, velocitator.effective_date_range.first, velocitator.effective_date_range.last)
       # x.to_a.index{|z| z.last.nonzero?}
       # => 1198
-      velocitator = SingleVelocitator.new("rails", "2.3.5")
       #x.to_a.index{|z| z.last.nonzero?}
+      # FIXME . got local dump of database
       #binding.pry
+     velocitator = SingleVelocitator.new("rails", "2.3.5")
       file = velocitator.graph("/tmp")
-      raise 'wtf'
     end
 
     it "has a shortcut graph method #2" do

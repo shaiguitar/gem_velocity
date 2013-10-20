@@ -36,11 +36,7 @@ class SingleVelocitator < BaseVelocitator
   end
 
   def title
-    "#{gem_name}-#{version}"
-  end
-
-  def totals
-    super.first
+    "#{gem_name}-#{version}\n(downloads: #{num_downloads})"
   end
 
 end

@@ -12,7 +12,7 @@ Some examples are noted below.
 
 ## Note
 
-There may be some inconstancies. These are outlined in:
+There may be some inconstancies due to bad data coming back from the api. These are outlined in:
 
 [https://gist.github.com/shaiguitar/d2af997b7f58e24fd305](https://gist.github.com/shaiguitar/d2af997b7f58e24fd305)
 
@@ -26,48 +26,22 @@ There are plans to put it on the web somewhere, so if you wait long enough you m
 
 # Example
 
-<pre>
-  velocitator = MultipleVelocitator.new("rails", ["4.0.0","3.2.14","2.3.5"])
-  file = velocitator.graph("/tmp")
-</pre>
+See below. More importantly though you should be able to pass in specific start time, end time, max and min values.
 
-Produces:
-
-![here](examples/rails-4.0.0-3.2.14-2.3.5.png)
-
-Notice the date range:
+This completes you being able to manipulate the boundries of the graph in question.
 
 <pre>
-  velocitator = MultipleVelocitator.new("rails", ["4.0.0","3.2.14","0.9.1"])
-  file = velocitator.graph("/tmp", [3.months.ago, Time.now])
+velocitator = MultipleVelocitator.new("rails", ["4.0.0","3.2.14"])
+file = velocitator.graph("/tmp")
 </pre>
 
-Produces:
+Renders:
 
-![here](examples/rails-4.0.0-3.2.14-0.9.1.png)
+![here](examples/rails-4.0.0-3.2.14.png)
 
-<pre>
-  velocitator = AggregatedVelocitator.new("rails", "4")
-  # matches any version /^4.\d/ etc
-  file = velocitator.graph("/tmp")
-</pre>
+See and run the specs to see other graphs.
 
-Produces:
-
-![here](examples/rails-4.0.1.rc1-4.0.0-4.0.0.rc2-4.0.0.rc1-4.0.0.beta1.png)
-
-Another: [celluloid](https://gist.github.com/shaiguitar/7e6d95971c5254fa3665)
-
-You could do the same with a `SingleVelocitator` as well: 
-
-<pre>
-  velocitator = SingleVelocitator.new("rails", "4.0.0")
-  file = velocitator.graph("/tmp")
-</pre>
-
-That image is left as an excerise to the reader. Actually it's late. But try it and see.
-
-Also, you should be able to pass in max,min values which completes you being able to manipulate the boundries of the graph in question.
+<!-- Another: [celluloid](https://gist.github.com/shaiguitar/7e6d95971c5254fa3665) -->
 
 ## Web UI
 

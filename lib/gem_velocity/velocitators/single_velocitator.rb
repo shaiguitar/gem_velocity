@@ -39,4 +39,7 @@ class SingleVelocitator < BaseVelocitator
     "#{gem_name}-#{version}\n(downloads: #{num_downloads})"
   end
 
+  def time_built
+    super(@version)
+  end
 end

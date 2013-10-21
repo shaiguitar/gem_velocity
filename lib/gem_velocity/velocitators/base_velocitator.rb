@@ -12,7 +12,9 @@ class BaseVelocitator
 
   def graph(root_arg = nil, range = nil, min = nil, max = nil)
     set_overwritable_attrs(root_arg,range,min,max)
-    gruff_builder.write
+    file = gruff_builder.write
+    puts "Wrote graph to #{file}"
+    file
   end
 
   # modifiers on the end result image being rendered. Essentially these are the boundries
@@ -45,6 +47,11 @@ class BaseVelocitator
     sum = totals.map {|t| t[:version_downloads]}.sum
     ActiveSupport::NumberHelper.number_to_delimited(sum)
   end
+
+  def time_built(version)
+    gem_data.versions_built_at[version]
+  end
+  alias :built_at :time_built
 
   private
 
@@ -149,11 +156,6 @@ class BaseVelocitator
 
   def gruff_builder
     GruffBuilder.new(@root || Dir.pwd,nil,versions,gem_name,graph_options)
-  end
-
-  # it's just shorter syntax
-  def time_built(version)
-    gem_data.versions_built_at[version]
   end
  
 end

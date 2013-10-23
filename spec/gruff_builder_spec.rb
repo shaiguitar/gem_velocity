@@ -1,9 +1,6 @@
 require 'spec_helper'
 
 describe GruffBuilder do
-  before do
-    @tmp_dir = SpecHelper.tmpdir
-  end
 
   it "raises if no root or if versions isnt an array" do
     lambda { builder = GruffBuilder.new(nil,nil,nil,nil, {}) }.should raise_error

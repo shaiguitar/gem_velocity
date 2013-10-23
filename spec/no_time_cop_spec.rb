@@ -7,7 +7,7 @@ describe 'with no time stubbing', :do_not_use_time_cop do
     it "has a shortcut graph method #1" do
       v = velocitator = SingleVelocitator.new("rails", "2.3.5")
       # https://rubygems.org/gems/rails/versions/2.3.5
-      # should be close to 1m, but the total from thei api returned is ~300k.
+      # should be close to 1m, but the total from thei api returned is ~33k.
       # between 2013-03-07 and 2013-03-08 it "starts". but there's a ton of missing data from rubygems.
       #
       # v.send(:gem_data).downloads_metadata(v.version, v.send(:effective_start_time), v.send(:effective_end_time))
@@ -18,8 +18,13 @@ describe 'with no time stubbing', :do_not_use_time_cop do
     end
 
     it "has a shortcut graph method #2" do
-      velocitator = MultipleVelocitator.new("rails", ["4.0.0","3.2.14","0.9.1"])
-      file = velocitator.graph("/tmp", [3.months.ago, Time.now])
+      versions = ["4.0.0","3.2.14","0.9.1"]
+      gem_name = "rails"
+      velocitators = versions.map{|v| SingleVelocitator.new(gem_name, v)}
+      plexer = Multiplexer.new("rails", velocitators)
+      plexer.root = "/tmp"
+      raise 'actually this should be fixed to inherit so we have the same interface. ver 0 ftw.'
+      file = plexer.graph("/tmp", [3.months.ago, Time.now])
       File.exist?(file).should be_true
     end
 

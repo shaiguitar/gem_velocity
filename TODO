@@ -1,11 +1,7 @@
-Web ui/embeddable links with those images.
-  can't remove images
-  have uniq name: hash the date_range,max,min,name,versions. (and time?)
-  shard the directories of where the image goes so it doesn't bomb out?
-
 Add a Version?
 
 currently, the versions in the base class are single versions, but they are essentially used for representing a specific line
+
 in default_line_datas.
 (and then used for titles, abd bs).
 
@@ -14,3 +10,9 @@ if rubygems 606 isn't solved, why not just put a total on there and let the inco
 rename time_format_str_small alias
 
 swap out gruff_builder to some other composing object of a builder, that can mash up the various velocitators?
+
+consolidate velocitator fixtrues or at least repeatable generators in specs.
+
+cassandra says to have an option to have the multiplexer start them from the same data (to see curve/adoption rate). I see it.
+
+hardcode a time limit of earliest_time since historical data is not reliable.

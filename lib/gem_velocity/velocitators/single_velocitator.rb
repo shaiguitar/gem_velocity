@@ -19,20 +19,17 @@ class SingleVelocitator < BaseVelocitator
     accumulated_downloads_per_day(@version).map {|day,total| total}.max
   end
 
-  def graph_options
-    opts = {
-      :title => title,
-      # todo change the -2 to -4? so if ifits in? if it's abvoe 4 fcors
-      :labels => ({1 => time_format_str_small(effective_start_time), (line_datas.first.size-2) => time_format_str_small(effective_end_time) }),
-      :max_value => effective_max_value,
-      :min_value => effective_min_value,
-      :line_datas => line_datas,
-      :hide_legend => true
-    }
-  end
+  def line_data(start_t = nil, end_t = nil)
+    range = nil
+    if start_t && end_t
+      range = compute_day_range_from_start_end(start_t,end_t)
+    else
+      range = effective_days_in_range
+    end
 
-  def line_datas
-    default_line_datas
+    range.map do |d|
+      downloads_per_day(version)[d] || 0
+    end
   end
 
   def title

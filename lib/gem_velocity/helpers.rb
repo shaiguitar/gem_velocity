@@ -10,4 +10,26 @@ module Helpers
     Date.parse(whatever.to_s).strftime("%Y-%m-%d")
   end
 
+  def earliest_for(whatevers)
+    whatevers = whatevers.map{|s| Date.parse(s) } if whatevers.first.is_a?(String)
+    time_format_str(whatevers.sort.first)
+  end
+
+  def latest_for(whatevers)
+    whatevers = whatevers.map{|s| Date.parse(s) } if whatevers.first.is_a?(String)
+    time_format_str(whatevers.sort.last)
+  end
+
+  def compute_day_range_from_start_end(s,e)
+    all_days = []
+    s = Date.parse(s)
+    e = Date.parse(e)
+    i = s
+    while (i <= e )
+      all_days << i
+      i += 1.day
+    end
+    all_days.map{|d| time_format_str_small(d)}
+  end
+
 end

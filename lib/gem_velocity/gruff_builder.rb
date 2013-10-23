@@ -14,16 +14,18 @@ class GruffBuilder
   attr_accessor :title, :labels, :line_datas, :min_value, :max_value, :hide_legend
 
   def initialize(root, relative_path, versions, gem_name, gruff_options = {})
-    @root = root || raise(ArgumentError,"you must set a root. default is root/public/images")
-    @relative_path = relative_path || "public/images/"
-    @versions = versions.is_a?(Array) ? versions : raise(ArgumentError,"versions must be an array")
-    @gem_name = gem_name
-    @title = gruff_options[:title] || ""
-    @labels = gruff_options[:labels] || {}
-    @line_datas = gruff_options[:line_datas]
-    @min_value = gruff_options[:min_value] || MIN_VALUE
-    @max_value = gruff_options[:max_value] || MAX_VALUE
-    @hide_legend = gruff_options[:hide_legend] || false
+    # just pass it in all in gruff_options?
+    @root           = root || raise(ArgumentError,"you must set a root. default is root/public/images")
+    @relative_path  = relative_path || "public/images/"
+    @versions       = versions.is_a?(Array) ? versions : raise(ArgumentError,"versions must be an array")
+    @gem_name       = gem_name
+    @title          = gruff_options[:title] || ""
+    @labels         = gruff_options[:labels] || {}
+    @line_datas     = gruff_options[:line_datas]
+    @min_value      = gruff_options[:min_value] || MIN_VALUE
+    @max_value      = gruff_options[:max_value] || MAX_VALUE
+    @hide_legend    = gruff_options[:hide_legend] || false
+    @type           = gruff_options[:type]
   end
 
   def relative_filename
@@ -31,7 +33,7 @@ class GruffBuilder
   end
 
   def filename
-    "#{graph_name(versions.join("-"))}.png"
+    "#{graph_name(@type, versions.join("-"))}.png"
   end
 
   def absolute_filename
@@ -63,9 +65,10 @@ class GruffBuilder
     FileUtils.mkdir_p(File.expand_path(absolute_destination))
   end
 
-  def graph_name(append_text = nil)
+  def graph_name(prepend_text = nil, append_text = nil)
+    prepend_text = prepend_text.nil? ? "" : "#{prepend_text}-"
     append_text = append_text.nil? ? "" : "-#{append_text}"
-    "#{gem_name}"+ append_text
+    prepend_text + "#{gem_name}"+ append_text
   end
 
   def gruff

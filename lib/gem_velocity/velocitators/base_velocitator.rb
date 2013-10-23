@@ -4,17 +4,31 @@ rescue
   'you need activesupport. please install'
 end
 
+#FIXME change versions to version, or remove entirely??
+
 class BaseVelocitator
 
   include ::Helpers
 
   attr_accessor :gem_name, :versions
 
-  def graph(root_arg = nil, range = nil, min = nil, max = nil)
+  def graph(root_arg = root, range = effective_date_range, min = effective_min_value, max = effective_max_value)
     set_overwritable_attrs(root_arg,range,min,max)
-    file = gruff_builder.write
+    file = gruff_builder(root,versions, gem_name, graph_options).write
     puts "Wrote graph to #{file}"
     file
+  end
+
+  def graph_options
+    opts = {
+      :title => title,
+      :labels => ({1 => time_format_str_small(effective_start_time), (line_data.size-2) => time_format_str_small(effective_end_time) }),
+      :max_value => effective_max_value,
+      :min_value => effective_min_value,
+      :line_datas => [line_data],
+      :hide_legend => true,
+      :type => self.class.to_s
+    }
   end
 
   # modifiers on the end result image being rendered. Essentially these are the boundries
@@ -27,6 +41,13 @@ class BaseVelocitator
 
   def effective_date_range
     @passed_date_range || default_date_range
+  end 
+  # some sugar
+  def effective_start_time; effective_date_range.first ;end
+  def effective_end_time; effective_date_range.last ;end
+
+  def effective_days_in_range
+    compute_day_range_from_start_end(effective_start_time,effective_end_time)
   end
 
   def effective_max_value
@@ -92,14 +113,6 @@ class BaseVelocitator
     0
   end
 
-  def default_line_datas
-    versions.map do |v|
-      effective_days_in_range.map do |d|
-        downloads_per_day(v)[d] || 0
-      end
-    end
-  end
-
   def base_earliest_time_for(verzionz)
     earliest_start = verzionz.map{|v| Date.parse(time_built(v)) }.min
     default_start = time_format_str(earliest_start)
@@ -113,11 +126,7 @@ class BaseVelocitator
     totals.flatten.compact.max
   end
 
-  def downloads_per_day(version)
-    # returns # "2013-10-10" => 45
-    accumulated_downloads_per_day(version)
-  end
-
+  # returns # "2013-10-10" => 45
   def accumulated_downloads_per_day(version)
     # downloads_metadata comes back ordered by date
     ret = Hash.new(0)
@@ -130,32 +139,11 @@ class BaseVelocitator
     end
     ret
   end
-
-  # a little sugar
-  def effective_start_time; effective_date_range.first ;end
-  def effective_end_time; effective_date_range.last ;end
-
-  # helper method to convert [start,end] into a 
-  # start..end range of days like "2013-10-10"
-  def effective_days_in_range
-    all_days = []
-    s = Date.parse(effective_start_time)
-    e = Date.parse(effective_end_time)
-    i = s
-    while (i <= e )
-      all_days << i
-      i += 1.day
-    end
-    all_days.map{|d| time_format_str_small(d)}
-  end
+  alias :downloads_per_day :accumulated_downloads_per_day
 
   def gem_data
     # need this memoized so the gem_data memoization works for the same instance
     @gem_data ||= GemData.new(@gem_name)
   end
 
-  def gruff_builder
-    GruffBuilder.new(@root || Dir.pwd,nil,versions,gem_name,graph_options)
-  end
- 
 end

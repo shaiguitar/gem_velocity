@@ -16,7 +16,7 @@ describe "a Velocitator rendering graphs" do
     velocitator.graph_options[:line_datas].should == [[303, 303, 303, 304, 304]]
 
     velocitator.graph_options[:title].should == "haml-i18n-extractor-0.0.17\n(downloads: 377)"
-    velocitator.graph_options[:labels].should == ({1=>"2013-09-13", (velocitator.line_datas.first.size-2) =>"2013-09-17"})
+    velocitator.graph_options[:labels].should == ({1=>"2013-09-13", (velocitator.line_data.size-2) =>"2013-09-17"})
     velocitator.graph_options[:max_value].should == 306 # the max in the range (time.now)
     velocitator.graph_options[:min_value].should == 0
 
@@ -83,57 +83,9 @@ describe SingleVelocitator do
     }.should_not raise_error
   end
 
-  it "has line datas" do
+  it "has line data" do
     velocitator = SingleVelocitator.new("haml-i18n-extractor", "0.0.17")
-    velocitator.line_datas.size.should eq (velocitator.versions.size)
-  end
-
-end
-
-
-describe MultipleVelocitator do
-  before do
-    @some_versions = ["0.0.17", "0.0.5","0.0.10"]
-  end
-
-  it "can initialize multiple versions" do
-    velocitator = MultipleVelocitator.new("haml-i18n-extractor", @some_versions)
-    velocitator.versions.should == @some_versions
-  end
-
-  it "holds the totals of the gem" do
-    velocitator = MultipleVelocitator.new("haml-i18n-extractor", ["0.0.17"])
-    velocitator.totals.first[:version_downloads].should eq 377
-  end
-
-  it "sets the earliest start range from to all of the versions info" do
-    # some_versions.map{|v| GemData.new("haml-i18n-extractor").versions_built_at[v]}
-    # => ["2013-06-16T00:00:00Z", "2013-03-22T00:00:00Z", "2013-05-06T00:00:00Z"]
-    velocitator = MultipleVelocitator.new("haml-i18n-extractor", @some_versions)
-    velocitator.effective_date_range.should eq ["2013-03-22T00:00:00Z", "2013-09-20T00:00:00Z"]
-  end
-
-  it "sets the max value to the max of all of versions" do
-    velocitator = MultipleVelocitator.new("haml-i18n-extractor", @some_versions)
-    velocitator.default_max_value.should eq 344
-  end
-
-  it "sets the max value to the max of all of versions" do
-    velocitator = MultipleVelocitator.new("haml-i18n-extractor", @some_versions)
-    velocitator.default_max_value.should eq 344
-  end
-
-  it "should set the line data to an array of versions.size with equal length which should be the max value of any one of them" do
-    velocitator = MultipleVelocitator.new("haml-i18n-extractor", @some_versions)
-    velocitator.line_datas.size.should == @some_versions.size
-    # all of them should be the same size, padded with 0's if there is no download info
-    velocitator.line_datas.map{|d| d.size }.uniq.size.should == 1
-  end
-
-  it "has a shortcut graph method" do
-    velocitator = MultipleVelocitator.new("haml-i18n-extractor", @some_versions)
-    file = velocitator.graph
-    File.exist?(file).should be_true
+    velocitator.line_data.should_not be_empty # [1,2,3]
   end
 end
 
@@ -161,7 +113,7 @@ describe AggregatedVelocitator do
 
   it "sends only one graph that is the total of those versions" do
     velocitator = AggregatedVelocitator.new(@gem_name, @minor_version)
-    velocitator.line_datas.first.size == 1 # [[1,2,3]] but not [[1,2,3][1,4,8]]
+    velocitator.line_data.should_not be_empty # [1,2,3]
   end
 
   it "sets the max to the multiple of one of its members max * the amount of versions" do

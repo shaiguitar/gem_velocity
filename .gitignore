@@ -16,7 +16,7 @@ test/tmp
 test/version_tmp
 tmp
 spec/tmp
+./public/images/
 public/
-images/
 spec/fixtures/vcr_cassettes
 spec/fixtures/vcr_cassettes/

@@ -42,6 +42,10 @@ RSpec.configure do |c|
     end
   end
 
+  c.before(:all) do
+    @tmp_dir = SpecHelper.tmpdir
+  end
+
   c.after(:suite) do
     FileUtils.rm_rf(SpecHelper.tmpdir)
   end

@@ -146,4 +146,8 @@ class BaseVelocitator
     @gem_data ||= GemData.new(@gem_name)
   end
 
+  def gruff_builder(path,versionz,gemname,graph_opts)
+    GruffBuilder.new(path || Dir.pwd, nil, versionz, gemname, graph_opts)
+  end
+
 end

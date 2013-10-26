@@ -7,9 +7,11 @@ require 'spec_helper'
 
 describe Multiplexer do
   before do
-    @v1 = SingleVelocitator.new("haml-i18n-extractor", "0.0.17")
-    @v2 = SingleVelocitator.new("haml-i18n-extractor", "0.0.16")
-    @v3 = AggregatedVelocitator.new("haml-i18n-extractor", "0.4")
+    # single
+    @v1 = BaseVelocitator.create(:gem_name => "haml-i18n-extractor", :version => "0.0.17")
+    @v2 = BaseVelocitator.create(:gem_name => "haml-i18n-extractor", :version => "0.0.16")
+    # aggregate
+    @v3 = BaseVelocitator.create(:gem_name => "haml-i18n-extractor", :version => "0.4.x")
     @velocitators = [@v1,@v2,@v3]
     @multiplexer = Multiplexer.new(@velocitators)
   end

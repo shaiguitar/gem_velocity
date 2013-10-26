@@ -1,9 +1,8 @@
 class SingleVelocitator < BaseVelocitator
 
   # the one passed in
+  # for :versions, it's just [version]
   attr_reader :version
-
-  #attr_reader :versions from base, just [version]
 
   def initialize(gem_name, version)
     @version = version
@@ -42,4 +41,10 @@ class SingleVelocitator < BaseVelocitator
   def time_built
     super(@version)
   end
+
+  def hide_legend?
+    true
+  end
+
+
 end

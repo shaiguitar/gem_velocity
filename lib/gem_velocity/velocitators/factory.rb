@@ -22,7 +22,7 @@ class Factory
 
   def velocitator
     if @type == :aggregated
-      AggregatedVelocitator.new(@gem_name, remove_trailing_x(@version))
+      AggregatedVelocitator.new(@gem_name, @version)
     elsif @type == :single
       SingleVelocitator.new(@gem_name, @version)
     else

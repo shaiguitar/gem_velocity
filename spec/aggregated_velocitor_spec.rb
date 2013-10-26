@@ -10,12 +10,12 @@ describe AggregatedVelocitator do
 
   it "can initialize and find out about all versions in a major" do
     velocitator = AggregatedVelocitator.new(@gem_name, @major_version)
-    velocitator.aggregated_versions.should == ["0.5.9", "0.5.8", "0.5.6", "0.5.5", "0.5.4", "0.5.3", "0.5.2", "0.5.1", "0.5.0", "0.4.3", "0.4.2", "0.4.1", "0.4.0", "0.3.5", "0.3.4", "0.3.2", "0.3.0", "0.2.1", "0.2.0", "0.1.0", "0.0.21", "0.0.20", "0.0.19", "0.0.18", "0.0.17", "0.0.16", "0.0.15", "0.0.12", "0.0.10", "0.0.9", "0.0.5"]
+    velocitator.versions.should == ["0.5.9", "0.5.8", "0.5.6", "0.5.5", "0.5.4", "0.5.3", "0.5.2", "0.5.1", "0.5.0", "0.4.3", "0.4.2", "0.4.1", "0.4.0", "0.3.5", "0.3.4", "0.3.2", "0.3.0", "0.2.1", "0.2.0", "0.1.0", "0.0.21", "0.0.20", "0.0.19", "0.0.18", "0.0.17", "0.0.16", "0.0.15", "0.0.12", "0.0.10", "0.0.9", "0.0.5"]
   end
 
   it "can initialize and find out about all versions in specific a minor" do
     velocitator = AggregatedVelocitator.new(@gem_name, @minor_version)
-    velocitator.aggregated_versions.should == ["0.4.3", "0.4.2", "0.4.1", "0.4.0"]
+    velocitator.versions.should == ["0.4.3", "0.4.2", "0.4.1", "0.4.0"]
   end
 
   it "sends the first and last version passed as versions though" do

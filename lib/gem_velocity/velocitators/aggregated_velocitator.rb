@@ -1,5 +1,6 @@
 class AggregatedVelocitator < BaseVelocitator
 
+  # TODO can probably get rid of this
   attr_reader :aggregated_versions
 
   # the one with the wildcard
@@ -10,9 +11,8 @@ class AggregatedVelocitator < BaseVelocitator
 
   def initialize(gem_name, top_level_ver)
     @gem_name = gem_name
-    @version = top_level_ver
-    @top_level_ver = remove_trailing_x(top_level_ver)
-    @versions = @aggregated_versions = gem_data.versions.select{|v| v.match(/^#{Regexp.escape(@top_level_ver)}/) }
+    @version = top_level_ver #with a wildcard/x
+    @versions = @aggregated_versions = gem_data.versions.select{|v| v.match(/^#{Regexp.escape(remove_trailing_x(top_level_ver))}/) }
     super(gem_name, @aggregated_versions)
   end
 
@@ -43,6 +43,10 @@ class AggregatedVelocitator < BaseVelocitator
 
   def title
     "#{@gem_name}: #{@version}\n(downloads: #{num_downloads})"
+  end
+
+  def hide_legend?
+    true
   end
 
 end

@@ -21,27 +21,21 @@ describe 'with no time stubbing', :do_not_use_time_cop do
       versions = ["4.0.0","3.2.14","0.9.1"]
       gem_name = "rails"
       velocitators = versions.map{|v| SingleVelocitator.new(gem_name, v)}
-      plexer = Multiplexer.new("rails", velocitators)
+      plexer = Multiplexer.new(velocitators)
       plexer.root = "/tmp"
-      raise 'actually this should be fixed to inherit so we have the same interface. ver 0 ftw.'
       file = plexer.graph("/tmp", [3.months.ago, Time.now])
       File.exist?(file).should be_true
     end
 
     it "has a shortcut graph method #3" do
       velocitator = AggregatedVelocitator.new("rails", "4")
-      #puts velocitator.versions
-      #puts velocitator.totals.inspect
       file = velocitator.graph("/tmp")
       File.exist?(file).should be_true
     end
 
     it "has a shortcut graph method #4" do
       velocitator = AggregatedVelocitator.new("haml-i18n-extractor", "0") # all of it
-      #puts velocitator.aggregated_versions
-      #puts velocitator.versions
       file = velocitator.graph("/tmp")
-      #puts file.inspect
       File.exist?(file).should be_true
     end
   end

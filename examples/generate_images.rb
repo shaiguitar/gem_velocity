@@ -25,7 +25,7 @@ puts "SINGLE VELOCITATOR"
 file = @v2.graph
 
 puts "AGGREGATED VELOCITATOR"
-@v3 = AggregatedVelocitator.new("haml-i18n-extractor", "0.4")
+@v3 = AggregatedVelocitator.new("haml-i18n-extractor", "0.4.x")
 @v3.max_value = 800
 file = @v3.graph
 

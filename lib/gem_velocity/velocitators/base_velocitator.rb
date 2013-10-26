@@ -16,7 +16,7 @@ class BaseVelocitator
 
   def graph(root_arg = root, range = effective_date_range, min = effective_min_value, max = effective_max_value)
     set_overwritable_attrs(root_arg,range,min,max)
-    file = gruff_builder(root,versions, gem_name, graph_options).write
+    file = gruff_builder(root, graph_options).write
     puts "Wrote graph to #{file}"
     file
   end
@@ -24,11 +24,11 @@ class BaseVelocitator
   def graph_options
     opts = {
       :title => title,
-      :labels => ({1 => time_format_str_small(effective_start_time), (line_data.size-2) => time_format_str_small(effective_end_time) }),
+      :labels => ({1 => time_format_str_small(effective_start_time), (line_datas.first.size-2) => time_format_str_small(effective_end_time) }),
       :max_value => effective_max_value,
       :min_value => effective_min_value,
-      :line_datas => [line_data],
-      :hide_legend => true,
+      :line_datas => line_datas,
+      :hide_legend => hide_legend?,
       :type => self.class.to_s
     }
   end
@@ -87,7 +87,7 @@ class BaseVelocitator
 
   def validate_correct_versions
     versions.each do |v|
-      gem_data.versions.include?(v) || raise(NoSuchVersion,"version not found for #{versions}.")
+      gem_data.versions.include?(v) || raise(NoSuchVersion,"version #{v} not found for #{gem_name}.")
     end
   end
 
@@ -113,6 +113,16 @@ class BaseVelocitator
 
   def default_min_value
     0
+  end
+
+  def line_datas
+    # aggregated and single are both just one, just line_data, but default to this
+    # because of the multiplexer, since it does have line_datas
+    [line_data]
+  end
+
+  def versions_for_legends
+    [version]
   end
 
   def base_earliest_time_for(verzionz)
@@ -148,8 +158,8 @@ class BaseVelocitator
     @gem_data ||= GemData.new(@gem_name)
   end
 
-  def gruff_builder(path,versionz,gemname,graph_opts)
-    GruffBuilder.new(path || Dir.pwd, nil, versionz, gemname, graph_opts)
+  def gruff_builder(path,graph_opts)
+    GruffBuilder.new(path || Dir.pwd, nil, versions_for_legends, gem_name, graph_opts)
   end
 
 end

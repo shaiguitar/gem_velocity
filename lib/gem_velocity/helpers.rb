@@ -32,4 +32,8 @@ module Helpers
     all_days.map{|d| time_format_str_small(d)}
   end
 
+  def remove_trailing_x(str)
+    str.gsub(/[xX]$/,"")
+  end
+
 end

@@ -4,8 +4,8 @@ describe AggregatedVelocitator do
   before do
     @gem_name = "haml-i18n-extractor"
     # it's just a regex match ^version
-    @major_version = "0"
-    @minor_version = "0.4"
+    @major_version = "0x"
+    @minor_version = "0.4.x"
   end
 
   it "can initialize and find out about all versions in a major" do

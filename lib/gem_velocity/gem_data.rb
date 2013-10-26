@@ -24,7 +24,7 @@ class GemData
     # it should be a hash
     if @versions_metadata.is_a?(String)
       if @versions_metadata.match(/This rubygem could not be found/)
-        raise(NoSuchGem, "This rubygem could not be found")
+        raise(NoSuchGem, "This rubygem #{gem_name} could not be found")
       end
     end
     @versions_metadata

@@ -1,6 +1,9 @@
 class SingleVelocitator < BaseVelocitator
 
+  # the one passed in
   attr_reader :version
+
+  #attr_reader :versions from base, just [version]
 
   def initialize(gem_name, version)
     @version = version

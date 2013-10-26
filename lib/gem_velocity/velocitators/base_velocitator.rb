@@ -4,13 +4,15 @@ rescue
   'you need activesupport. please install'
 end
 
-#FIXME change versions to version, or remove entirely??
-
 class BaseVelocitator
 
   include ::Helpers
 
   attr_accessor :gem_name, :versions
+
+  def self.create(options)
+    Factory.new(options).velocitator
+  end
 
   def graph(root_arg = root, range = effective_date_range, min = effective_min_value, max = effective_max_value)
     set_overwritable_attrs(root_arg,range,min,max)

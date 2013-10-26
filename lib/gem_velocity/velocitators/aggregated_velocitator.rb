@@ -1,12 +1,18 @@
 class AggregatedVelocitator < BaseVelocitator
 
   attr_reader :aggregated_versions
+
+  # the one with the wildcard
   attr_reader :version
+
+  # all of the ones matched, aggregated_versions
+  attr_reader :versions
 
   def initialize(gem_name, top_level_ver)
     @gem_name = gem_name
-    @version = @top_level_ver = top_level_ver
-    @aggregated_versions = gem_data.versions.select{|v| v.match(/^#{Regexp.escape(top_level_ver)}/) }
+    @version = top_level_ver
+    @top_level_ver = remove_trailing_x(top_level_ver)
+    @versions = @aggregated_versions = gem_data.versions.select{|v| v.match(/^#{Regexp.escape(@top_level_ver)}/) }
     super(gem_name, @aggregated_versions)
   end
 
@@ -36,7 +42,7 @@ class AggregatedVelocitator < BaseVelocitator
   end
 
   def title
-    "#{@gem_name}: #{@top_level_ver}X\n(downloads: #{num_downloads})"
+    "#{@gem_name}: #{@version}\n(downloads: #{num_downloads})"
   end
 
 end

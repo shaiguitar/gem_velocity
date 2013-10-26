@@ -20,16 +20,29 @@ puts "SINGLE VELOCITATOR"
 file = @v1.graph
 
 puts "SINGLE VELOCITATOR"
+# these are basically equivalet:
+# BaseVelocitator.create(:gem_name => "haml-i18n-extractor", :version => "0.0.16")
+# BaseVelocitator.create(:full_name => "haml-i18n-extractor-0.0.16")
 @v2 = SingleVelocitator.new("haml-i18n-extractor", "0.0.16")
 @v2.max_value = 800
 file = @v2.graph
 
 puts "AGGREGATED VELOCITATOR"
+# these are basically equivalet:
+# BaseVelocitator.create(:gem_name => "haml-i18n-extractor", :version => "0.4.x")
+# BaseVelocitator.create(:full_name => "haml-i18n-extractor-0.4.x")
 @v3 = AggregatedVelocitator.new("haml-i18n-extractor", "0.4.x")
 @v3.max_value = 800
 file = @v3.graph
 
 puts "MULTIPLEXING"
 @velocitators = [@v1,@v2,@v3]
+@multiplexer = Multiplexer.new(@velocitators)
+file = @multiplexer.graph
+
+puts "MULIPLEXING AGAIN"
+@velocitators = []
+@velocitators << BaseVelocitator.create(:gem_name  => "haml-i18n-extractor", :version => "0.4.x")
+@velocitators << BaseVelocitator.create(:full_name => "haml-i18n-extractor-0.3.x")
 @multiplexer = Multiplexer.new(@velocitators)
 file = @multiplexer.graph

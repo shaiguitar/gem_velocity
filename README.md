@@ -10,7 +10,7 @@ This is a single line graph of a single version.
 
 This is a signle line graph that has an aggregated view of a major version (or bunch of single minor versions, etc).
 
-See specs and examples for more info.
+See specs and [examples](examples/) for more info.
 
 There is also the `Multiplexer`, this is a wrapper around being able to draw multiple lines at once. You pass it any number of the above and it will graph multiple lines together in one graph.
 

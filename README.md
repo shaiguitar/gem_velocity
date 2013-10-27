@@ -16,11 +16,13 @@ There is also the `Multiplexer`, this is a wrapper around being able to draw mul
 
 ## Note
 
-There may be some inconstancies due to bad data coming back from the api. These are outlined in:
+There are inconstancies of some bad data coming back from the api. 
 
-[https://gist.github.com/shaiguitar/d2af997b7f58e24fd305](https://gist.github.com/shaiguitar/d2af997b7f58e24fd305)
+Sometimes this is due to older data, some historical data was deleted to accommodate for performance issues at the time.
 
-It seems it happens with older data. I'm investigating though with the help of the rubygems team as per [this](https://github.com/rubygems/rubygems.org/pull/606) and will hopefully have some progress soon.
+[This](https://github.com/rubygems/rubygems.org/pull/606) [this](https://github.com/rubygems/rubygems.org/issues/616) and [this](https://gist.github.com/shaiguitar/d2af997b7f58e24fd305) have a bit more info if you want to dig in yourself.
+
+There are some other smaller slight inconsistencies due to the [rubygems.org](https://github.com/rubygems/rubygems.org) counter implementation that I believe is being worked on as well.
 
 ## Requirements
 
@@ -38,14 +40,8 @@ This essentially completes you being able to manipulate the boundries of the gra
 
 ## Web UI
 
-Do you want to see this with ease (Hey, the api is easy. Whatever) on the web at `http://rubygems-velocity.org/gem/rails/4.0.0,3.2.14` or something similar?
+Do you want to just see this on web at `http://rubygems-velocity.org/gem/rails/4.0.0,3.2.14` or something similar?
 
-[Work](https://github.com/shaiguitar/gem_velocity_web) has been started to put it on a UI, but your feedback in necessary for it to be useful:
+[Work](https://github.com/shaiguitar/gem_velocity_web) has been started to put it on a UI, but your feedback/contributions will be necessary for it to be useful.
 
-So if you have any idea of how you'd like to use it, please put your thoughts on the [issue](https://github.com/shaiguitar/gem_velocities/issues/3)
-
-Lemme know.
-
-## Feedback
-
-Is appreciated! Also, contributions! Any (other) ideas?
+Feel free to put your thoughts on the [issue](https://github.com/shaiguitar/gem_velocities/issues/3) and or pull requests.

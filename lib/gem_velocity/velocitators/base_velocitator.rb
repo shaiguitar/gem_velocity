@@ -125,11 +125,6 @@ class BaseVelocitator
     [version]
   end
 
-  def base_earliest_time_for(verzionz)
-    earliest_start = verzionz.map{|v| Date.parse(time_built(v)) }.min
-    default_start = time_format_str(earliest_start)
-  end
-
   def base_max_for(verzionz)
     totals = []
     verzionz.each {|v|

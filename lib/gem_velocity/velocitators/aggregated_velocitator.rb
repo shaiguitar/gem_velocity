@@ -14,10 +14,13 @@ class AggregatedVelocitator < BaseVelocitator
     @version = top_level_ver #with a wildcard/x
     @versions = @aggregated_versions = gem_data.versions.select{|v| v.match(/^#{Regexp.escape(remove_trailing_x(top_level_ver))}/) }
     super(gem_name, @aggregated_versions)
+
+    raise NoSuchVersion, "no versions found for #{@version}!" if @aggregated_versions.empty?
   end
 
   def default_start
-    base_earliest_time_for(@aggregated_versions)
+    earliest_start = @aggregated_versions.map{|v| Date.parse(time_built(v)) }.compact.min
+    time_format_str(earliest_start)
   end
 
   def default_max_value

@@ -1,3 +1,4 @@
+require "trollop"
 require "gem_velocity/version"
 require "gem_velocity/helpers"
 require "gem_velocity/gem_data"

@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "gruff"
   spec.add_dependency "activesupport"
   spec.add_dependency "gems"
+  spec.add_dependency "trollop", "1.16.2"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"

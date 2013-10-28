@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require "gem_velocity"
+require "pry"
+
+option_parser = Trollop::Parser.new do
+  version "Current version: #{GemVelocity::VERSION}"
+  opt :gem_name, "gem name", :short => 'g', :type => String
+  opt :version_str, "version_str", :short => 'n', :type => String
+  # TODO start,end,max,min.
+  # TODO handle commas and change to multiplexer ?
+  banner <<-EOB
+
+  Run like:
+
+    gem_velocity -g <gem_name> -n <version_number>
+    # example
+    # gem_velocity -g haml-i18n-extractor -n 0.0.5
+  EOB
+end
+
+opts = Trollop::with_standard_exception_handling option_parser do
+  raise Trollop::HelpNeeded if ARGV.empty?
+  option_parser.parse ARGV
+end
+
+opts[:version] = opts[:version_str]
+velocitator = BaseVelocitator.create(opts) # velociraptor would be nice, but gotta be conformant.
+file = velocitator.graph

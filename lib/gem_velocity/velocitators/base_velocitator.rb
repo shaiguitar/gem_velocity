@@ -60,15 +60,18 @@ class BaseVelocitator
     @passed_min_value || default_min_value
   end
 
-  def totals
+  def totals_map_by_version
+    h = {}
     versions.map do |v|
-      gem_data.total_for_version(v)
+      total_for_version = gem_data.total_for_version(v)
+      h.merge!(v => total_for_version)
     end
+    h
   end
 
   def num_downloads
-    sum = totals.map {|t| t[:version_downloads]}.sum
-    ActiveSupport::NumberHelper.number_to_delimited(sum)
+    sum_of_all_versions = totals_map_by_version.values.map {|t| t[:version_downloads]}.sum
+    ActiveSupport::NumberHelper.number_to_delimited(sum_of_all_versions)
   end
 
   def time_built(version)

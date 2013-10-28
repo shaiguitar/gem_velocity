@@ -60,7 +60,7 @@ describe SingleVelocitator do
 
   it "holds the totals of the gem" do
     velocitator = SingleVelocitator.new("haml-i18n-extractor", "0.0.17")
-    velocitator.totals.first[:version_downloads].should eq 377
+    velocitator.totals_map_by_version["0.0.17"][:version_downloads].should eq 377
     #binding.pry
   end
 

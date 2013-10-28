@@ -1,7 +1,11 @@
 #!/usr/bin/env ruby
 
+$:.unshift(".")
+$:.unshift("lib")
+
 require "gem_velocity"
 require "pry"
+require "rbtrace"
 
 option_parser = Trollop::Parser.new do
   version "Current version: #{GemVelocity::VERSION}"

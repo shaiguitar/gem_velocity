@@ -11,6 +11,7 @@ class BaseVelocitator
   attr_accessor :gem_name, :versions
 
   def self.create(options)
+    sleep 10
     Factory.new(options).velocitator
   end
 

@@ -32,5 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "timecop"
   spec.add_development_dependency "sourcify"
   spec.add_development_dependency "ParseTree"
+  spec.add_development_dependency "perftools.rb"
 
 end

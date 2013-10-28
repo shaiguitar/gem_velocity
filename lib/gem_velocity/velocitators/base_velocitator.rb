@@ -81,11 +81,12 @@ class BaseVelocitator
 
   private
 
-  def initialize(gem_name, versions)
-    @gem_name = gem_name || raise(ArgumentError, 'need a name')
-    @versions = versions || raise(ArgumentError, 'required versions')
+  def after_init
+    raise ArgumentError, "Need to pass a gem name!" if (gem_name.nil? || gem_name.empty?)
+    raise ArgumentError, "Need to pass versions!" if versions.compact.empty?
     validate_correct_gem
     validate_correct_versions
+    gem_data.parallel_fetch_for(versions)
   end
 
   def validate_correct_versions
@@ -137,19 +138,20 @@ class BaseVelocitator
   end
 
   # returns # "2013-10-10" => 45
-  def accumulated_downloads_per_day(version)
-    # downloads_metadata comes back ordered by date
+  def downloads_per_day(version)
+    @downloads_per_day ||= Hash.new
+    return @downloads_per_day[version] if @downloads_per_day[version]
     ret = Hash.new(0)
-    gem_data.downloads_metadata(version, default_start, default_end).each_cons(2) do |p,n|
+    from_api = gem_data.prefetched_downloads_metadata(version, default_start, default_end)
+    from_api.each_cons(2) do |p,n|
       #day,total pairs
       curr_total = n.last
       day = n.first
       previous_day = p.first
       ret[day] = curr_total + ret[previous_day]
     end
-    ret
+    @downloads_per_day[version] = ret
   end
-  alias :downloads_per_day :accumulated_downloads_per_day
 
   def gem_data
     # need this memoized so the gem_data memoization works for the same instance

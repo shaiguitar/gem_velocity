@@ -6,7 +6,9 @@ class Multiplexer < BaseVelocitator
   def initialize(velocitators)
     @velocitators = velocitators
     # TODO what if there are multiple gem_names being multiplexed?
-    super(velocitators.first.gem_name, velocitators.map(&:versions).flatten)
+    @gem_name = velocitators.first.gem_name
+    @versions = velocitators.map(&:versions).flatten
+    after_init
   end
 
   def version

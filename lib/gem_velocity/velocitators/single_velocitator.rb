@@ -5,8 +5,10 @@ class SingleVelocitator < BaseVelocitator
   attr_reader :version
 
   def initialize(gem_name, version)
+    @gem_name = gem_name
     @version = version
-    super(gem_name, [version])
+    @versions = [version]
+    after_init
   end
 
   def default_start
@@ -18,7 +20,7 @@ class SingleVelocitator < BaseVelocitator
   end
 
   def default_max_value
-    accumulated_downloads_per_day(@version).map {|day,total| total}.max
+    downloads_per_day(@version).map {|day,total| total}.max
   end
 
   def line_data(start_t = nil, end_t = nil)

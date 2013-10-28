@@ -22,9 +22,9 @@ class Factory
 
   def velocitator
     if @type == :aggregated
-      AggregatedVelocitator.new(@gem_name, @version)
+      @velocitator ||= AggregatedVelocitator.new(@gem_name, @version)
     elsif @type == :single
-      SingleVelocitator.new(@gem_name, @version)
+      @velocitator ||= SingleVelocitator.new(@gem_name, @version)
     else
       raise 'no velocitor found to generate!'
     end

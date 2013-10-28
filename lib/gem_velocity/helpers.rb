@@ -37,3 +37,25 @@ module Helpers
   end
 
 end
+
+# http://stackoverflow.com/questions/2051229/how-to-compare-versions-in-ruby
+class ComparableVersion < Array
+  def initialize s
+    @str = s
+    super(s.split('.').map { |e| e.to_i })
+  end
+  def str
+    @str
+  end
+  def < x
+    (self <=> x) < 0
+  end
+  def > x
+    (self <=> x) > 0
+  end
+  def == x
+    (self <=> x) == 0
+  end
+end
+
+

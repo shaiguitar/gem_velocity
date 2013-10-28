@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require "gem_velocity"
-require "pry"
 
 option_parser = Trollop::Parser.new do
   version "Current version: #{GemVelocity::VERSION}"
@@ -24,6 +23,8 @@ opts = Trollop::with_standard_exception_handling option_parser do
   option_parser.parse ARGV
 end
 
-opts[:version] = opts[:version_str]
-velocitator = BaseVelocitator.create(opts) # velociraptor would be nice, but gotta be conformant.
+opts[:version] = opts.delete(:version_str)
+
+velocitator = BaseVelocitator.create(opts)
 file = velocitator.graph
+

@@ -1,15 +1,4 @@
-Add a Version?
-
-currently, the versions in the base class are single versions, but they are essentially used for representing a specific line
-
-in default_line_datas.
-(and then used for titles, abd bs).
-
-if rubygems 606 isn't solved, why not just put a total on there and let the inconsistnecies just be with some notice?
-
 rename time_format_str_small alias
-
-swap out gruff_builder to some other composing object of a builder, that can mash up the various velocitators?
 
 consolidate velocitator fixtrues or at least repeatable generators in specs.
 
@@ -25,4 +14,4 @@ speed the fuck out of it:
   Wrote graph to /Users/shair/projects/gem_velocities2/gem_velocity_web/public/images/AggregatedVelocitator-rails-3.2.x.png
   2013-10-27 17:46:53 -0700
 
-add total that is displayed on rubygems (vs total that it gets back and calculates per day).
+use the perftool stuff.

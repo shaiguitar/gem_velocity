@@ -16,3 +16,13 @@ consolidate velocitator fixtrues or at least repeatable generators in specs.
 cassandra says to have an option to have the multiplexer start them from the same data (to see curve/adoption rate). I see it.
 
 hardcode a time limit of earliest_time since historical data is not reliable.
+
+speed the fuck out of it:
+
+  b = rails, 3.2.x
+  1.9.3-p392 :009 > puts Time.now ; file = b.graph; puts Time.now; puts file.inspect
+  2013-10-27 17:33:54 -0700
+  Wrote graph to /Users/shair/projects/gem_velocities2/gem_velocity_web/public/images/AggregatedVelocitator-rails-3.2.x.png
+  2013-10-27 17:46:53 -0700
+
+add total that is displayed on rubygems (vs total that it gets back and calculates per day).

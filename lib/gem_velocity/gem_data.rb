@@ -42,7 +42,7 @@ class GemData
     @downloads_metadata ||= {}
     key = "#{version}-#{start_time}-#{end_time}"
     return @downloads_metadata[key] if @downloads_metadata[key]
-    @downloads_metadata[key] ||= Gems.downloads(gem_name, version, start_time, end_time).to_a
+    @downloads_metadata[key] ||= Gems.downloads(gem_name, version, start_time, end_time)
   end
 
 

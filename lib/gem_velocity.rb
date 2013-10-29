@@ -18,3 +18,7 @@ require 'date'
 
 module GemVelocity
 end
+
+# this should be used for short-lived scripts.
+# can be configurable if need be.
+GC.disable

@@ -19,8 +19,8 @@ class AggregatedVelocitator < BaseVelocitator
   end
 
   def default_start
-    earliest_start = @aggregated_versions.map{|v| Date.parse(time_built(v)) }.compact.min
-    time_format_str(earliest_start)
+    smallest_version = @aggregated_versions.sort_by {|v| Gem::Version.new(v) }.first
+    built_at(smallest_version)
   end
 
   def default_max_value

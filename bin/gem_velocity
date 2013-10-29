@@ -23,8 +23,6 @@ opts = Trollop::with_standard_exception_handling option_parser do
   option_parser.parse ARGV
 end
 
-#require 'perftools'
-#PerfTools::CpuProfiler.start("/tmp/gem_velocity")
 velocitator = BaseVelocitator.create(opts)
 file = velocitator.graph
-#PerfTools::CpuProfiler.stop
+

@@ -140,8 +140,12 @@ class BaseVelocitator
   # returns # "2013-10-10" => 45
   def accumulated_downloads_per_day(version)
     # downloads_metadata comes back ordered by date
+    # TODO behnchmark...refactor.
+    #require 'pry'
+    #binding.pry
     ret = Hash.new(0)
-    gem_data.downloads_metadata(version, default_start, default_end).each_cons(2) do |p,n|
+    from_api = gem_data.downloads_metadata(version, default_start, default_end)
+    from_api.each_cons(2) do |p,n|
       #day,total pairs
       curr_total = n.last
       day = n.first

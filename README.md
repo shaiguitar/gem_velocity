@@ -40,8 +40,8 @@ This essentially completes you being able to manipulate the boundries of the gra
 
 ## Web UI
 
-Do you want to just see this on web at `http://rubygems-velocity.org/gem/rails/4.0.0,3.2.14` or something similar?
-
 [Work](https://github.com/shaiguitar/gem_velocity_web) has been started to put it on a UI, but your feedback/contributions will be necessary for it to be useful.
+
+It's available [here](http://gem-velocity.shairosenfeld.com/)
 
 Feel free to put your thoughts on the [issue](https://github.com/shaiguitar/gem_velocities/issues/3) and or pull requests.

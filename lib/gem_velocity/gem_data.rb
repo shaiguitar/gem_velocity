@@ -11,6 +11,8 @@ class GemData
     @gem_name = gem_name
   end
 
+  MAX_THREADS = 20
+
   def parallel_fetch_for(versions)
     @mutex1 = Mutex.new
     @cached_downloads_metatada ||= {}
@@ -20,11 +22,14 @@ class GemData
     puts "fetching #{versions.size} download data requests"
     threads = []
 
-    # TODO limit threads.
     versions.map do |v|
-      threads << Thread.new {
-        fetch_downloads_metadata(v,start_t,end_t,@cached_downloads_metatada)
-      }
+      active_threads = threads.select{ |t| t.alive? }
+      if active_threads.size > MAX_THREADS
+        sleep 1 # busy wait thread pool
+        redo
+      else
+        threads << Thread.new { fetch_downloads_metadata(v,start_t,end_t,@cached_downloads_metatada) }
+      end
     end
     threads.map(&:join)
   end
